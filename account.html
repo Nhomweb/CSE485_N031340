@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>DANG NHAP TAI KHOAN</title>
+    <link rel="stylesheet" type="text/css" href="account.css">
+</head>
+<body>
+<div id="main">
+        <div id="header"><a  href="account.html" id="logo"></a></div>
+        
+
+<div id="contentMain" class="loginpage  clearfix">
+    <div class="content">
+        <h1>Đăng nhập tài khoản</h1>
+        <div class="socialLogin">
+            <p>
+                <a class="btn facebook" href="/account/facebook?returnUrl=%2Faccount%2Fprofile">
+                    Đăng nhập qua Facebook
+                </a>
+            </p>
+            <p>
+                <a class="btn google" href="/account/google?returnUrl=%2Faccount%2Fprofile">
+                    Đăng nhập qua  Google
+                </a>
+            </p>
+        </div>
+        <div class="form-login">
+<form action="/account/login" method="post">                <p>
+                    <label class="title">Đăng nhập bằng tài khoản hoặc điện thoại</label>
+                    <input class="textfield" data-val="true" data-val-required="Nhập tên đăng nhập của bạn" id="UserName" maxlength="32" name="UserName" placeholder="Nhập tài khoản hoặc số điện thoại" type="text" value="">
+                    <span class="field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span>
+                </p>
+                <p>
+                    
+                    <input class="textfield" data-val="true" data-val-required="Nhập mật khẩu của bạn" id="Password" maxlength="32" name="Password" placeholder="Nhập mật khẩu" type="password">
+                    <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                </p>
+                <p>
+                    <button type="submit" class="btn meta">Đăng nhập</button>
+                </p>
+</form>        </div>
+        <div class="actions">
+            <p>
+                Bạn chưa có tài khoản? <a href="/account/signup">Đăng ký</a>
+            </p>
+            <p>
+                <a class="btn-forget" href="/account/recovery">Lấy lại tài khoản?</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+        <div id="footer"></div>
+    </div>
+</body>
+</html>

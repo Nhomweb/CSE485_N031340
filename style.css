@@ -1,0 +1,541 @@
+body {
+    color: #333;
+    font-family: "Roboto",UILanguageFont,Arial,sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.4;
+    text-rendering: inherit;
+}
+strong {
+  font-weight:bold; 
+}
+img {
+  vertical-align: middle;
+}
+* {
+    padding: 0px;
+    margin: auto;
+}
+.header {
+    background: rgba(0, 0, 0, 0) url("header.jpg") repeat scroll 0 0;
+    height: 570px;
+}
+.tab_header {
+    background: rgba(34, 44, 55, 0.9) none repeat scroll 0 0;
+    color: #000;
+    font: 13px/27px Arial, sans-serif;
+    top: 0;
+    width: 100%;
+    height: 70px;
+}
+
+.logo_header {
+  padding: 0 150px 0 60px;
+  float: left;
+}
+.fix_logo_header {
+  border: medium none;
+  display: block;
+  padding-top: 10px;
+}
+.account {
+
+    position: absolute;
+    right: 95px;
+    display: block;
+    top: 8px;
+    padding: 8px;
+    font-size: 16px;
+
+}
+.btn-login {
+
+    width: inherit;
+    text-indent: 32px;
+    margin-top: 8px;
+    display: block;
+
+}
+.form-wrapper {
+  width: 615px;
+  padding: 15px;
+}
+.form-wrapper input {
+  width: 495px;
+  height: 20px;
+  padding: 10px 5px;
+  float: left;
+  border:0;
+  background: #fff;
+  -moz-border-radius: 3px 0 0 3px;
+  -webkit-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+}
+.form-wrapper input:focus {
+  outline: 0;
+  background: #fff;
+  -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+  -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+  box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+.form-wrapper button {
+  overflow: visible;
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 40px;
+  width: 110px;
+  color: #fff;
+  text-transform: uppercase;
+  background: #333;
+  -moz-border-radius: 0 3px 3px 0;
+  -webkit-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+  border:solid 1px #fff;
+}
+.form-wrapper button:hover {
+  background: #e54040;
+}
+.form-wrapper button:active,  .form-wrapper button:focus {
+  background: #c42f2f;
+}
+.form-wrapper button:before {
+  content: '';
+  position: absolute;
+  border-width: 8px 8px 8px 0;
+  border-style: solid solid solid none;
+  border-color: transparent #333 transparent;
+  top: 12px;
+  left: -6px;
+}
+.form-wrapper button:hover:before {
+  border-right-color: #333;
+}
+.form-wrapper button:focus:before {
+  border-right-color: #c42f2f;
+}
+ .form-wrapper button::-moz-focus-inner {
+ border: 0;
+ padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #212121;
+}
+.search_header {
+    float: left;
+}
+.profiles_header {
+  display: none;
+    float: left;
+    width: 25%;
+}
+.menu_header {
+    height: 0px;
+    position: relative;
+    top: -48px;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+ul li {
+    list-style: outside none none;
+}
+.menu_left {  
+  position: fixed; /*Cho menu cố định 1 vị trí với top và left*/
+  top: 70px; /*Nằm trên cùng*/
+  left: 0; /*Nằm sát bên trái*/
+}
+.menu_left nav {
+  background: rgba(245, 245, 245, 0.95);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  float:left;
+  
+
+}
+.menu_left nav ul {
+  padding: 0;
+  margin: 0;
+  float:left;
+}
+.menu_left nav ul li {
+  list-style: none;
+  height: 50px;
+}
+.menu_left nav ul li:hover {
+  width: 50px;
+  height: 50px;
+  background:#f50;
+}
+.menu_left nav ul li a {
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  text-decoration: none;
+  color: #555;
+  padding: 10px 0 0 20px;
+  font-size:18px;
+  text-align: right;
+}
+.menu_left nav ul li a:hover {
+  color: #333;
+}
+
+.store {
+  background: #b3c833;
+  width: 50px;
+  height: 50px;
+  margin-bottom: px;
+}
+
+.movies {
+  background: #ce5043;
+  width: 50px;
+  height: 50px;
+  margin-bottom: px;
+}
+
+.music {
+  background: #fb8521;
+  width: 50px;
+  height: 50px;
+  margin-bottom: px;
+}
+
+.books {
+  background: #1aa1e1;
+  width: 50px;
+  height: 50px;
+  margin-bottom: px;
+}
+
+.magazines {
+  background: #5e5ca6;
+  width: 50px;
+  height: 50px;
+  margin-bottom: px;
+}
+
+.devices {
+  background: #658092;
+  width: 50px;
+  height: 50px;
+  margin-bottom: px;
+}
+
+
+.fa.fa-bomb {
+    font-size: 30px;
+    margin-top: 10px;
+  margin-left:10px;
+  color:#fff;
+}
+.fa.fa-rocket {
+    font-size: 30px;
+    margin-top: 10px;
+  margin-left:10px;
+  color:#fff; 
+}
+.fa.fa-trophy {
+  font-size: 30px;
+    margin-top: 10px;
+  margin-left:10px;
+  color:#fff;
+}
+.fa.fa-empire {
+  font-size: 30px;
+    margin-top: 10px;
+  margin-left:10px;
+  color:#fff;
+}
+.fa.fa-github-alt {
+  font-size: 30px;
+    margin-top: 10px;
+  margin-left:10px;
+  color:#fff;
+}
+.fa.fa-codiepie {
+  font-size: 30px;
+    margin-top: 10px;
+  margin-left:5px;
+  color:#fff;
+  
+}
+.fa.fa-star {
+  font-size: 30px;
+    margin-top: 10px;
+  margin-left:10px;
+  color:#fff;
+  
+  
+}
+.fa.fa-home 
+{
+  font-size: 30px;
+    margin-top: 10px;
+  margin-left:10px;
+  color:#fff;
+  
+  
+}
+
+.menu_right {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(34, 44, 55, 0) 0%, rgba(34, 44, 55, 1) 100%) repeat scroll 0 0;
+    height: 100%;
+    width: 100%;
+}
+.menu_right ul {
+    list-style-type: none;
+    text-align: center;
+}
+.menu_right li {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -5px;
+    padding: 5px;
+    width: 130px;
+}
+ul li {
+    list-style: outside none none;
+}
+.menu_right a {
+    text-decoration: none;
+    display: block;
+    color: #fff;
+    font-size: 18px;
+}
+.menu_right ul {
+  list-style-type: none;
+  text-align: center;
+}
+.menu_right li {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -5px;
+    padding: 5px;
+    width: 130px;
+}
+.menu_right a {
+  text-decoration: none;
+  display: block;
+  color:#fff;
+  font-size: 18px;
+}
+.menu_right a:hover {
+  color: #fff;
+  font-weight:bold;
+  border-bottom:3px solid #fff;
+}
+.menu_right a:active {
+  color: #333;
+  border-bottom:3px solid #689f38;
+}
+/*==Dropdown Menu==*/
+.sub-menu {
+    background: rgba(34, 44, 55, 0.9) none repeat scroll 0 0;
+    display: none;
+    height: 300px;
+    position:absolute;
+    width: 600px;
+  z-index:999;
+  left:-200px;
+}
+.sub-menu li a{
+  color:#fff;
+  display:block;
+  width:120px;
+  padding:20px;
+  font-size:14px;
+}
+.sub-menu li a:hover{
+  color:#fff;
+  border-bottom:solid 3px #fff;
+  display:block;
+}
+.menu_right li {
+  position: relative;
+}
+.menu_right li:hover .sub-menu {
+  display: block;
+}
+.sub-menu li {
+  margin-left: 0 !important;
+}
+
+/*==Menu cấp 3==*/
+.sub-menu > ul {
+  display: none !mportant;
+}
+
+.line {
+    height: 100px;
+  padding-left: 250px;
+
+}
+
+.line h3 {
+    box-sizing: border-box;
+    cursor: default;
+    font-size: 28px;
+    font-weight: 100;
+    min-height: 37px;
+    min-width: 680px;
+    padding: 5px;
+      margin-left: auto;
+  margin-right: auto;
+    position: relative;
+  text-align:left;
+}
+
+.line span {
+    font-size: 17px;
+    font-weight: 100;
+    padding: 5px;
+    position: relative;
+    text-align: left;
+}
+.buttom_more {
+    background: #689f38 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 14px !important;
+    left: 40px;
+    padding: 10px !important;
+    top: -15px;
+}
+.buttom_more:hover{
+    background: #f50 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+}
+.buttom_more a{
+    color: #fff;
+    font-size: 14px !important;
+}
+#wapper {
+
+    padding-top: 20px;
+
+}
+.clear {
+
+    clear: both;
+    padding: 10px;
+
+}
+.line {
+
+    height: 100px;
+    padding-left: 230px;
+
+}
+.box_wapper_1 {
+
+    padding-left: 230px;
+
+}
+.post_game {
+    background: #fafafa none repeat scroll 0 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 245px;
+    width: 160px;
+  float:left;
+  margin:5px;
+}
+.post_game:hover {
+    background: #ccffcc none repeat scroll 0 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 245px;
+    width: 160px;
+  float:left;
+  margin:5px;
+}
+/* Post 2 */
+.post_game_1 {
+    background: #fafafa none repeat scroll 0 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 245px;
+    width: 160px;
+  float:right;
+  margin:5px;
+}
+.post_game_1:hover {
+    background: #ccffcc none repeat scroll 0 0;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 245px;
+    width: 160px;
+  margin:5px;
+}
+.thumb img{
+    height: 140px;
+    width: 140px;
+  margin:10px;
+}
+.h2_title {
+    color: #212121;
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 17px;
+    margin: 0 15px 0 12px;
+    max-height: 36px;
+    min-height: 18px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.details p {
+    margin: 0 10px 0 12px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+  color: #616161;
+}
+.vote {
+    background: rgba(0, 0, 0, 0) url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAQAAAC1QeVaAAAAY0lEQVR4AWP4jwcSloSB4oTiBCCFQ/JB8QN0SYS+/0CYgCZZXFDcUHyg+ANIEkgeAPIKEJILgIKocAHCWHTpBWh2Fl+AS10AipEgCRY+AIRAGk2y2ADoxwCwogAgy4Co4MMDAQ52uOmaLCe/AAAAAElFTkSuQmCC") repeat scroll left bottom;
+    float: left;
+    height: 16px;
+    margin-left: 10px;
+    margin-top: 8px;
+    width: 71px;
+}
+
+.bottom {
+    color: #f50;
+    float: right;
+    padding-right: 10px;
+  text-decoration: none;
+    text-transform: uppercase;
+}
+.clear {
+  clear:both;
+  padding:10px; 
+}
+.box_wapper_2 {
+    padding-left: 230px;
+  height:259px;
+  background-attachment:scroll;
+  background-image: url(http://webgamehay.net/wp-content/themes/photo/images/game-cho-be.jpg);
+  background-repeat: no-repeat;
+  background-position:left;
+  background-size: 490px;
+    padding-top: 10px;
+  background-color:#a2d70d;
+  padding-right:145px;
+  overflow:hidden;
+}
+
