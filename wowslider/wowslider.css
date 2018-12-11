@@ -130,8 +130,9 @@
 #wowslider-container1 a.ws_prev:active {
 	background-position: 0 100%; 
 } 
-* html #wowslider-container1 a.ws_next,* html #wowslider-container1 a.ws_prev{display:block}
-#wowslider-container1:hover a.ws_next, #wowslider-container1:hover a.ws_prev, #wowslider-container1:active a.ws_next, #wowslider-container1:active a.ws_prev{display:block}
+#wowslider-container1 a.ws_next,#wowslider-container1 a.ws_prev{display:block}
+#wowslider-container1:hover a.ws_next, #wowslider-container1:hover a.ws_prev, #wowslider-container1:active a.ws_next, #wowslider-container1:active a.ws_prev{
+	display:block}
 
 /*playpause*/
 #wowslider-container1 .ws_playpause {

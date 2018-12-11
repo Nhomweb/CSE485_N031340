@@ -19,11 +19,11 @@
                 <img src="images/logo.jpg" alt="Logo">
             </section>
             <form action="#" class="searchform cf" method="post">
-                <input type="text" placeholder="B?n mu?n choi game g�?">
+                <input type="text" placeholder="Bạn muốn chơi game gì?">
                 <button type="submit" name="search">Search</button>
             </form>
-            <button type="submit" id="button-login"><a href="login.html">�ang nh?p</a></button>
-            <button type="submit" id="button-register"><a href="register.html">�ang k�</a></button>
+            <button type="submit" id="button-login"><a href="login.php">Đăng nhập</a></button>
+            <button type="submit" id="button-register"><a href="register.php">Đăng ký</a></button>
         </section>
     </header>
     <!-- End Header -->
@@ -33,16 +33,16 @@
     <nav class="menu">
         <section class="container">
             <ul>
-                <li><a href="index.html">Trang ch?</a></li>
-                <li><a href="#">Game m?i</a></li>
-                <li><a href="#">Game choi nhi?u</a></li>
-                <li><a href="#">N?u an</a></li>
-                <li><a href="#">H�nh d?ng</a></li>
-                <li><a href="#">�ua xe</a></li>
-                <li><a href="#">Th?i trang</a></li>
-                <li><a href="#">Th? thao</a></li>
-                <li><a href="#">Th? thao</a></li>
-                <li><a href="#">Th? lo?i kh�c</a></li>
+                <li><a href="index.php">Trang chủ</a></li>
+                <li><a href="#">Game mới</a></li>
+                <li><a href="#">Game chơi nhiều</a></li>
+                <li><a href="#">Nấu ăn</a></li>
+                <li><a href="#">Hành động</a></li>
+                <li><a href="#">Đua xe</a></li>
+                <li><a href="#">Thời trang</a></li>
+                <li><a href="#">Thể thao</a></li>
+                <li><a href="#">Thể thao</a></li>
+                <li><a href="#">Thể loại khác</a></li>
             </ul>
         </section>
     </nav>
@@ -57,15 +57,15 @@
                     <div id="wowslider-container1">
                         <div class="ws_images">
                             <ul>
-                                <li><a href="#" target="_self"><img src="images/game_1.jpg" alt="game_1" title="Truy t�m pokemon trong vu?n "
+                                <li><a href="#" target="_self"><img src="images/game_1.jpg" alt="game_1" title="Truy tìm pokemon trong vườn "
                                             id="wows1_0" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_2.jpg" alt="game_2" title="Ti?m t�c c?a Barbie"
+                                <li><a href="#" target="_self"><img src="images/game_2.jpg" alt="game_2" title="Tiệm tóc của Barbie"
                                             id="wows1_1" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_3.jpg" alt="game_3" title="Ch� kh? bu?n t�m ninja 2"
+                                <li><a href="#" target="_self"><img src="images/game_3.jpg" alt="game_3" title="Chú khỉ buồn tìm ninja 2"
                                             id="wows1_2" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_4.jpg" alt="game_4" title="Phi�u Luu C�ng T�n L?a"
+                                <li><a href="#" target="_self"><img src="images/game_4.jpg" alt="game_4" title="Phiêu Lưu Cùng Tên Lửa"
                                             id="wows1_3" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_5.jpg" alt="game_5" title="L�m b�nh t�nh y�u"
+                                <li><a href="#" target="_self"><img src="images/game_5.jpg" alt="game_5" title="Làm bánh tình yêu"
                                             id="wows1_4" /></a></li>
                             </ul>
                         </div>
@@ -85,67 +85,67 @@
                     <section class="content-gamehot">
                         <article class="box-gamehot">
                             <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ng�i nh� vui v?</a></h3>
+                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
                         </article>
                         <article class="box-gamehot">
                             <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ng�i nh� vui v?</a></h3>
+                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
                         </article>
                         <article class="box-gamehot-last">
                             <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ng�i nh� vui v?</a></h3>
+                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
                         </article>
                         <article class="box-gamehot">
                             <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ng�i nh� vui v?</a></h3>
+                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
                         </article>
                         <article class="box-gamehot">
                             <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ng�i nh� vui v?</a></h3>
+                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
                         </article>
                         <article class="box-gamehot-last">
                             <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ng�i nh� vui v?</a></h3>
+                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
                         </article>
                     </section>
                 </aside>
             </section>
             <section class="login">
-                <header class="title-login-register">�ANG K� TH�NH VI�N</header>
+                <header class="title-login-register">ĐĂNG KÝ THÀNH VIÊN</header>
                 <form action="" method="post" id="login-register-form">
                     <div class="row">
-                        <label for="username">T�n dang nh?p<span class="red asterisk bold"> *</span></label>
-                        <input name="username" id="username" type="text" required autofocus pattern="^[a-z\d\.]{6,}$" title="�t nh?t 8 k� t? & kh�ng kho?ng tr?ng">
+                        <label for="username">Tên đăng nhập<span class="red asterisk bold"> *</span></label>
+                        <input name="username" id="username" type="text" required autofocus pattern="^[a-z\d\.]{6,}$" title="Ít nhất 8 kí tự & không khoảng trắng">
                     </div>
                     <div class="row">
-                        <label for="password">M?t kh?u<span class="red asterisk bold"> *</span></label>
+                        <label for="password">Mật khẩu<span class="red asterisk bold"> *</span></label>
                         <input name="password" id="password" type="password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
-                            title="�t nh?t 8 k� t? bao g?m ch? hoa, ch? thu?ng, s?">
+                            title="Ít nhất 8 kí tự bao gồm chữ hoa, chữ thường, số">
                     </div>
                     <div class="row">
                         <label for="email">Email<span class="red asterisk bold"> *</span></label>
                         <input name="email" id="email" type="email" required>
                     </div>
                     <div class="row">
-                        <label for="name">H? & t�n</label>
+                        <label for="name">Họ & tên</label>
                         <input name="name" id="name" type="text">
                     </div>
                     <div class="row">
-                        <label for="">Gi?i t�nh</label>
+                        <label for="">Giới tính</label>
                         <input name="sex" value="nam" type="radio">Nam&nbsp;&nbsp;
-                        <input name="sex" value="nu" type="radio">N?
+                        <input name="sex" value="nu" type="radio">Nữ
                     </div>
                     <div class="row">
-                        <label for="birthday">Ng�y sinh</label>
+                        <label for="birthday">Ngày sinh</label>
                         <input name="birthday" id="birthday" type="date">
                     </div>
                     <div class="row">
-                        <label for="address">�?a ch?</label>
+                        <label for="address">Địa chỉ</label>
                         <input name="address" id="address" type="text">
                     </div>
                     <div class="row-submit">
-                        <button type="submit" name="submit">�ang k�</button>
-                        <button type="reset">L�m l?i</button>
+                        <button type="submit" name="submit">Đăng ký</button>
+                        <button type="reset">Làm lại</button>
                     </div>
 
 
@@ -158,48 +158,48 @@
                         src="images/quangcao/quangcao_1.gif" alt=""></a>
             </section>
             <section class="game-choinhieunhat">
-                <header class="title-game-choinhieunhat">Game choi nhi?u nh?t</header>
+                <header class="title-game-choinhieunhat">Game chơi nhiều nhất</header>
                 <section class="content-game-choinhieunhat">
                     <article class="box-game-choinhieunhat">
                         <a href=""><img src="images/image-game.jpg" alt=""></a>
                         <section>
-                            <a href="#"><h5>�ua xe d?a h�nh</h5></a>
-                            <p>Lu?t choi: 25034</p>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
                         </section>
                     </article>
                     <article class="box-game-choinhieunhat">
                         <a href=""><img src="images/image-game.jpg" alt=""></a>
                         <section>
-                            <a href="#"><h5>�ua xe d?a h�nh</h5></a>
-                            <p>Lu?t choi: 25034</p>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
                         </section>
                     </article>
                     <article class="box-game-choinhieunhat">
                         <a href=""><img src="images/image-game.jpg" alt=""></a>
                         <section>
-                            <a href="#"><h5>�ua xe d?a h�nh</h5></a>
-                            <p>Lu?t choi: 25034</p>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
                         </section>
                     </article>
                     <article class="box-game-choinhieunhat">
                         <a href=""><img src="images/image-game.jpg" alt=""></a>
                         <section>
-                            <a href="#"><h5>�ua xe d?a h�nh</h5></a>
-                            <p>Lu?t choi: 25034</p>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
                         </section>
                     </article>
                     <article class="box-game-choinhieunhat">
                         <a href=""><img src="images/image-game.jpg" alt=""></a>
                         <section>
-                            <a href="#"><h5>�ua xe d?a h�nh</h5></a>
-                            <p>Lu?t choi: 25034</p>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
                         </section>
                     </article>
                     <article class="box-game-choinhieunhat-last">
                         <a href=""><img src="images/image-game.jpg" alt=""></a>
                         <section>
-                            <a href="#"><h5>�ua xe d?a h�nh</h5></a>
-                            <p>Lu?t choi: 25034</p>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
                         </section>
                     </article>
                 </section>
@@ -208,16 +208,16 @@
     </section>
     <!-- End Wrapper -->
     <section class="sitemap">
-        <div class="box-sitemap"><a href="#">H�nh d?ng</a></div>
-        <div class="box-sitemap"><a href="#">�ua xe</a></div>
-        <div class="box-sitemap"><a href="#">Th? thao</a></div>
-        <div class="box-sitemap"><a href="#">Th? thao</a></div>
-        <div class="box-sitemap-last"><a href="#">B?n g�i</a></div>
-        <div class="box-sitemap"><a href="#">Phi�u luu</a></div>
-        <div class="box-sitemap"><a href="#">Nh?p vai</a></div>
-        <div class="box-sitemap"><a href="#">H�nh d?ng</a></div>
-        <div class="box-sitemap"><a href="#">Th? thao</a></div>
-        <div class="box-sitemap-last"><a href="#">Van ph�ng</a></div>
+        <div class="box-sitemap"><a href="#">Hành động</a></div>
+        <div class="box-sitemap"><a href="#">Đua xe</a></div>
+        <div class="box-sitemap"><a href="#">Thể thao</a></div>
+        <div class="box-sitemap"><a href="#">Thể thao</a></div>
+        <div class="box-sitemap-last"><a href="#">Bạn gái</a></div>
+        <div class="box-sitemap"><a href="#">Phiêu lưu</a></div>
+        <div class="box-sitemap"><a href="#">Nhập vai</a></div>
+        <div class="box-sitemap"><a href="#">Hành động</a></div>
+        <div class="box-sitemap"><a href="#">Thể thao</a></div>
+        <div class="box-sitemap-last"><a href="#">Văn phòng</a></div>
     </section>
     <footer class="footer">
         <a href="#"><img src="images/facebook.png" /></a>
@@ -225,10 +225,10 @@
         <a href="#"><img src="images/contact.png" /></a>
         <a href="#"><img src="images/map.png" /></a>
         <div>
-            <p><b>Choi game l�nh m?nh, vui v?, s?p x?p th?i gian h?p l�, t?n hu?ng cu?c s?ng l�nh m?nh, h?c t?p t?t v� lao d?ng
-                t?t.
+            <p><b>Chơi game lành mạnh, vui vẻ, sắp xếp thời gian hợp lý, tận hưởng cuộc sống lành mạnh, học tập tốt và lao động
+                tốt.
                 </br>
-                Ch?u tr�ch nhi?m n?i dung: Nguy?n Nh?t - Tru?ng Giang. �2018 �?i h?c Th?y L?i, �?a ch?: 175 T�Y SON, �?NG �A, H� N?I.  �i?n tho?i: 0926 053 033.</b></p>
+                Chịu trách nhiệm nội dung: Nguyễn Nhật - Trường Giang. ©2018 Đại học Thủy Lợi, Địa chỉ: 175 TÂY SƠN, ĐỐNG ĐA, HÀ NỘI.  Điện thoại: 0926 053 033.</b></p>
         </div>
     </footer>
     <!-- Start Wowslider -->

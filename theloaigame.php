@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -12,42 +12,7 @@
 </head>
 
 <body>
-    <!-- Start Header -->
-    <header class="header-top">
-        <section class="container">
-            <section class="logo">
-                <img src="images/logo.jpg" alt="Logo">
-            </section>
-            <form action="#" class="searchform cf" method="post">
-                <input type="text" placeholder="Bạn muốn chơi game gì?">
-                <button type="submit" name="search">Search</button>
-            </form>
-            <button type="submit" id="button-login"><a href="login.php">Đăng nhập</a></button>
-            <button type="submit" id="button-register"><a href="register.php">Đăng ký</a></button>
-        </section>
-    </header>
-    <!-- End Header -->
-
-
-    <!-- Start Menu -->
-    <nav class="menu">
-        <section class="container">
-            <ul>
-                <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="#">Game mới</a></li>
-                <li><a href="#">Game chơi nhiều</a></li>
-                <li><a href="#">Nấu ăn</a></li>
-                <li><a href="#">Hành động</a></li>
-                <li><a href="#">Đua xe</a></li>
-                <li><a href="#">Thời trang</a></li>
-                <li><a href="#">Thể thao</a></li>
-                <li><a href="#">Thể thao</a></li>
-                <li><a href="#">Thể loại khác</a></li>
-            </ul>
-        </section>
-    </nav>
-
-    <!-- End Menu -->
+   <?php include"header.php"?>
 
     <!-- Start Wrapper  -->
     <section class="wrapper">
@@ -110,105 +75,141 @@
                     </section>
                 </aside>
             </section>
-            <section class="login">
-                <header class="title-login-register">ĐĂNG NHẬP</header>
-                <form action="" method="post" id="login-register-form">
-                    <div class="row">
-                        <label for="username">Tên đăng nhập<span class="red asterisk bold"> *</span></label>
-                        <input name="username" id="username" type="text" required autofocus >
+            <section class="game-cung-theloai">
+                <header class="title-game-cung-theloai">
+                    <section class="tentheloai"><a href="#">Game bắn súng</a></section>
+                </header>
+                <section class="list-game">
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game-last">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game-last">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game-last">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <article class="box-game-last">
+                        <a href="#"><img src="images/image-game.jpg" alt=""></a>
+                        <section>
+                            <a href="#"><h5>Đua xe địa hình</h5></a>
+                            <p>Lượt chơi: 25034</p>
+                        </section>
+                    </article>
+                    <div style="text-align: center;">
+                        <ul class="pagination">
+                            <li><a href="#">« </a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#" class="active">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#"> »</a></li>
+                        </ul>
                     </div>
-                    <div class="row">
-                        <label for="password">Mật khẩu<span class="red asterisk bold"> *</span></label>
-                        <input name="password" id="password" type="password" required >
-                    </div>
-                    <div class="row-submit">
-                        <button type="submit" name="submit">Đăng nhập</button>
-                    </div>
-
-
-                </form>
-            </section>
-        </section>
-        <aside class="content-right">
-            <section class="game-choinhieunhat">
-                <header class="title-game-choinhieunhat">Game chơi nhiều nhất</header>
-                <section class="content-game-choinhieunhat">
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat-last">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
                 </section>
             </section>
-        </aside>
-        <section class="sitemap">
-                <div class="box-sitemap"><a href="#">Hành động</a></div>
-                <div class="box-sitemap"><a href="#">Đua xe</a></div>
-                <div class="box-sitemap"><a href="#">Thể thao</a></div>
-                <div class="box-sitemap"><a href="#">Thể thao</a></div>
-                <div class="box-sitemap-last"><a href="#">Bạn gái</a></div>
-                <div class="box-sitemap"><a href="#">Phiêu lưu</a></div>
-                <div class="box-sitemap"><a href="#">Nhập vai</a></div>
-                <div class="box-sitemap"><a href="#">Hành động</a></div>
-                <div class="box-sitemap"><a href="#">Thể thao</a></div>
-                <div class="box-sitemap-last"><a href="#">Văn phòng</a></div>
         </section>
+        <?php include"slider.php"?>
     </section>
     <!-- End Wrapper -->
-
-    <footer class="footer">
-            <a href="#"><img src="images/facebook.png" /></a>
-	        <a href="#"><img src="images/gmail.png" /></a>
-	        <a href="#"><img src="images/contact.png" /></a>
-	        <a href="#"><img src="images/map.png" /></a>
-	        <div>
-	            <p><b>Chơi game lành mạnh, vui vẻ, sắp xếp thời gian hợp lý, tận hưởng cuộc sống lành mạnh, học tập tốt và lao động
-	                tốt.
-	                </br>
-	                Chịu trách nhiệm nội dung: Nguyễn Nhật - Trường Giang. ©2018 Đại học Thủy Lợi, Địa chỉ: 175 TÂY SƠN, ĐỐNG ĐA, HÀ NỘI.  Điện thoại: 0926 053 033.</b></p>
-	        </div>
-    </footer>
-    <!-- Start Wowslider -->
-    <script type="text/javascript" src="wowslider/wowslider.js"></script>
-    <script type="text/javascript" src="wowslider/script.js"></script>
-    <!-- End Wowslider -->
+   <?php include"footer.php"?>
 </body>
 
 </html>

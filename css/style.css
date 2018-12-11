@@ -1,4 +1,4 @@
-﻿
+
 /* ---------------------Start Layout--------------------- */
 body{
 	margin:0;
@@ -422,6 +422,7 @@ cf::after, cf::before{
 
 /************** Start Form Login **************/
 .title-login-register{
+	width: 550px;
     width: fit-content;
     padding: 8px 20px;
     background-color: rgb(129, 220, 0);
@@ -431,16 +432,16 @@ cf::after, cf::before{
     font-weight: bold;
     font-size: 20px;
     color: white;
-    border-radius: 10px 25px 0px 0px;
+    border-radius: 10px 40px 0px 0px;
 
 }
 #login-register-form{
-    width: 550px;
+    width: 590px;
     height: auto;
     padding-bottom: 20px;
     background-color: white;
     border: 5px solid rgb(129, 220, 0);
-    border-radius: 0px 25px 25px 25px;
+    border-radius: 0px 0px 10px 40px;
     margin-left: 80px;
     margin-bottom: 20px;
     box-sizing: border-box; 
@@ -843,7 +844,7 @@ cf::after, cf::before{
 /************** Start Quảng cáo **************/
 .quangcao{
     width: inherit;
-    margin-top: 8px;
+    margin-top: 20px;
     box-shadow: 
     1px 1px 2px black,
     2px 2px 4px gray,
