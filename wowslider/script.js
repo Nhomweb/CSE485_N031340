@@ -60,3 +60,17 @@ jQuery("#wowslider-container1").wowSlider({
  onBeforeStep: 0,
  images: 0
 });
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("yeuthichnhat");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+

@@ -1,3 +1,42 @@
+<?php
+include('controller/c_web.php');
+$c_web= new C_web();
+$active=$c_web->active();
+$active=$active['active'];
+?>
+
+<?php
+require('dangky/includes/config.php');
+
+//collect values from the url
+$id = trim($_GET['x']);
+$active = trim($_GET['y']);
+
+//if id is number and the active token is not empty carry on
+if(is_numeric($id) && !empty($active)){
+
+    //update users record set the active column to Yes where the memberID and active value match the ones provided in the array
+    $stmt = $db->prepare("UPDATE user SET active = 'Yes' WHERE id = :id AND active = :active");
+    $stmt->execute(array(
+        ':id' => $id,
+        ':active' => $active
+    ));
+
+    //if the row was updated redirect the user
+    if($stmt->rowCount() == 1){
+
+        //redirect to login page
+        header('Location: login.php?action=active');
+        exit;
+
+    } else {
+        echo "Your account could not be activated.";
+    }
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -5,7 +44,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Kích hoạt tài khoản</title>
 </head>
 
 <body>
@@ -23,7 +62,7 @@
                             </tr>
                             <tr>
                                 <td style="padding:20px 20px 12px 20px"> <span style="font-size:13px;color:#252525;font-family:Arial,Helvetica,sans-serif">
-                                        Chào Nguyễn Hà Minh Huy, </span> </td>
+                                        Chào <?=$active->username?>, </span> </td>
                             </tr>
                             <tr>
                                 <td style="padding:4px 20px 12px 20px"> <span style="font-size:12px;color:#252525;font-family:Arial,Helvetica,sans-serif;line-height:18px">
@@ -89,8 +128,8 @@
                                 <td style="padding:10px 20px 12px 20px">
                                     <div style="background:rgb(255,248,204);border:1px solid rgb(255,140,0);padding:10px;border-radius:3px 3px 0px 0px;font-size:11px;font-family:'Courier New',Courier,monospace"
                                         align="center"> <a title="Đường dẫn kích hoạt tài khoản"
-                                            href="#"
-                                            style="text-decoration:none;color:#252525" target="_blank" >This link</a>
+                                            href='".DIR."form_active.php?x=$id&y=$activasion'
+                                            style="text-decoration:none;color:#252525" target="_blank" ><a href='".DIR."form_active.php?x=$id&y=$activasion'</a></a>
                                     </div>
                                 </td>
                             </tr>
@@ -109,12 +148,12 @@
                             </tr>
                             <tr>
                                 <td valign="middle" style="background-color:#6e6e6e;font-size:11px;vertical-align:middle;text-align:center;padding:10px 20px 10px 20px;line-height:18px;border:1px solid #6e6e6e;font-family:Arial;color:#cccccc">
-                                    Bản quyền © 2005-2018 Web Game mini <br>Hệ thống Game mini online toàn cầu kết hợp bảo vệ người dùng hàng đầu Việt Nam </td>
+                                    Bản quyền © 2018 Web Game mini <br>Hệ thống Game mini online toàn cầu kết hợp bảo vệ người dùng hàng đầu Việt Nam </td>
                             </tr>
                             <tr>
                                 <td style="font-family:Arial;padding-top:6px;font-size:11px;color:#252525;text-align:center">
                                     Hotline: 01214755005 &nbsp;&nbsp;&nbsp; Email: <a style="text-decoration:none;color:#427fed"
-                                        href="mailto:minhhuy97.ptit@gmail.com" target="_blank">minhhuy97.ptit@gmail.com</a> </td>
+                                        href="mailto:NhatNV62@wru.vn" target="_blank">NhatNV62@wru.vn</a> </td>
                             </tr>
                         </tbody>
                     </table>

@@ -1,4 +1,4 @@
-<section class="sitemap">
+<div class="sitemap">
         <div class="box-sitemap"><a href="#">Game Hành động</a></div>
         <div class="box-sitemap"><a href="#">Game Đua xe</a></div>
         <div class="box-sitemap"><a href="#">Game Thể thao</a></div>
@@ -9,7 +9,7 @@
         <div class="box-sitemap"><a href="#">Game Hành động</a></div>
         <div class="box-sitemap"><a href="#">Game Thể thao</a></div>
         <div class="box-sitemap-last"><a href="#">Game Văn phòng</a></div>
-    </section>
+    </div>
 
     <footer class="footer">
         <a href="#"><img src="images/facebook.png" /></a>
@@ -27,3 +27,7 @@
     <!-- Start Wowslider -->
     <script type="text/javascript" src="wowslider/wowslider.js"></script>
     <script type="text/javascript" src="wowslider/script.js"></script>
+
+    </body>
+
+</html>

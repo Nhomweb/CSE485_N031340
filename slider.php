@@ -1,108 +1,78 @@
- <aside class="content-right">
-            <section class="quangcao">
-                <a href="http://indogamersonline.blogspot.com/2011/05/game-untuk-nokia-2700-classic-cricket.html" target="_blank"><img src="images/quangcao/quangcao_1.gif" alt=""></a>
-                <a href="http://indogamersonline.blogspot.com/2011/05/game-untuk-nokia-2700-classic-cricket.html" target="_blank"><img src="images/quangcao/quangcao_1.gif" alt=""></a>
-            
-            </section>
-            <section class="game-choinhieunhat">
-                <header class="title-game-choinhieunhat">Game chơi nhiều nhất</header>
-                <section class="content-game-choinhieunhat">
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat-last">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
+ <div class="content-right">
+    <div class="quangcao">
+        <a href="http://indogamersonline.blogspot.com/2011/05/game-untuk-nokia-2700-classic-cricket.html" target="_blank"><img src="images/quangcao/quangcao_1.gif" alt=""></a>
+        <a href="http://www.xemtructiepbongda.net/2015/06/youtube-bong-da.html" target="_blank"><img src="images/quangcao/quangcao_10.gif" alt=""></a>
+
+    </div>
+    <div class="game-choinhieunhat">
+        <header class="title-game-choinhieunhat">Game chơi nhiều nhất</header>
+        <section class="content-game-choinhieunhat">
+
+          <?php
+          for ($i=0; $i <count($nhieunhat) ; $i++) {
+            if ($i==0) {
+                ?>
+                <article class="box-game-choinhieunhat">
+                    <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <section>
+                        <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
+                    </section>
+                </article>
+                <?php
+            }
+            else{
+                ?> 
+                <article class="box-game-choinhieunhat">
+                    <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <section>
+                        <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
+                    </section>
+                </article>
+                <?php
+            }
+
+        }
+        ?>
+    </section>
+</div>
+
+
+
+
+
+
+<div class="game-choinhieunhat" id="yeuthichnhat">
+    <header class="title-game-choinhieunhat">Game yêu thích nhiều nhất</header>
+    <section class="content-game-choinhieunhat">
+      <?php
+      for ($i=0; $i <count($yeuthich) ; $i++) {
+        if ($i==0) {
+            ?>
+            <article class="box-game-choinhieunhat">
+                <a href=""><img src="games/img/<?=$yeuthich[$i]->hinhgame?>" alt=""></a>
+                <section>
+                    <a href="#"><h5><?=$yeuthich[$i]->tengame?></h5></a>
+                    <p>Lượt thích: <?=$yeuthich[$i]->luotyeuthich?></p>
                 </section>
-            </section>
-            <section class="game-choinhieunhat">
-                <header class="title-game-choinhieunhat">Game yêu thích nhiều nhất</header>
-                <section class="content-game-choinhieunhat">
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat-last">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
+            </article>
+            <?php
+        }
+        else{
+            ?>
+            <article class="box-game-choinhieunhat">
+                <a href=""><img src="games/img/<?=$yeuthich[$i]->hinhgame?>" alt=""></a>
+                <section>
+                    <a href="#"><h5><?=$yeuthich[$i]->tengame?></h5></a>
+                    <p>Lượt thích: <?=$yeuthich[$i]->luotyeuthich?></p>
                 </section>
-            </section>
-        </aside>
+            </article>
+            <?php
+        }
+
+    }
+    ?>
+</section>
+</div>
+</div>

@@ -1,12 +1,13 @@
 
 /* ---------------------Start Layout--------------------- */
 body{
-	margin:0;
-	padding:0;
-	font-family:Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
     font-size:12px;
     background-image: url("../images/back-ground.jpg");
     background-repeat: repeat-y;
+  
 }
 .header-top{
     width: 100%;
@@ -20,8 +21,8 @@ body{
 }
 .menu{
     width:100%;
-	height:35px;
-	background:#57bdf4;
+    height:45px;
+    background:#57bdf4;
 }
 .menu > .container{
     width: 990px;
@@ -33,7 +34,15 @@ body{
 .wrapper{
     width: 990px;
     margin: 0 auto;
+    position: relative;
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
 .content-left{
     width: 730px;
     float: left;
@@ -56,18 +65,18 @@ body{
 }
 .footer{
     font-size:15px;
-	line-height:20px;
-	clear:both;
-	width:100%;
+    line-height:20px;
+    clear:both;
+    width:100%;
     height:auto;
-	padding-top:20px;
-	padding-bottom:20px;
-	text-align:center;
-	background: linear-gradient(to bottom, white 15%, #57bdf4 100%);
-	border-top:1px dashed rgb(168, 168, 168);
+    padding-top:20px;
+    padding-bottom:20px;
+    text-align:center;
+    background: linear-gradient(to bottom, white 15%, #57bdf4 100%);
+    border-top:1px dashed rgb(168, 168, 168);
 }
 .footer img{
-	width:80px;
+    width:80px;
     padding:10px 30px 0px 0px; 
     transition: all 0.5s;
 }
@@ -75,12 +84,25 @@ body{
     opacity: 0.6;
 }
 .footer p{
-	color:black;	
+    color:black;
 }
 .clear{
     clear: both;
 }
 /* End Layout */
+
+
+
+
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
 
 
 /* ---------------------Start Header--------------------- */
@@ -169,12 +191,12 @@ cf::after, cf::before{
 #button-login, #button-register{
     width: 120px;
     height: 35px;
-	
+    
     background: -moz-linear-gradient(bottom,#009aff 30%, #3FF 70%);
     background: -o-linear-gradient(bottom,#009aff 30%, #3FF 70%);
     background: -ms-linear-gradient(bottom,#009aff 30%, #3FF 70%);
     background: -webkit-gradient(linear,left bottom,left top,color-stop(0.3, #009aff ),color-stop(0.7, #3FF));
-		
+        
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
@@ -186,6 +208,8 @@ cf::after, cf::before{
     1px 1px 2px black,
     2px 2px 4px gray,
     3px 3px 6px rgb(79, 79, 79);
+    text-align: center;
+    list-style: none;
 }
 #button-login > a, #button-register > a{
     text-decoration: none;
@@ -204,15 +228,19 @@ cf::after, cf::before{
     background: -webkit-gradient(linear,left bottom,left top,color-stop(0.3, #00c9ff ),color-stop(0.7, #3FF));
 }
 #button-login a:active, #button-register a:active{
-	color:#FFF;
+    color:#FFF;
 }
 #button-login{
     top: 25%;
     left: 72%;
+    text-align: center;
+    list-style: none;
 }
 #button-register{
     top: 25%;
     left: 86%;
+    text-align: center;
+    list-style: none;
 }
 /* End Login-Register */
 
@@ -224,26 +252,26 @@ cf::after, cf::before{
     line-height: 40px;
 }
 .container ul li{
-	float:left;
-	list-style-type:none;
-	line-height:inherit;
-	font-size:15px;
+    float:left;
+    list-style-type:none;
+    line-height:inherit;
+    font-size:15px;
     margin-right:20px;
 }
 .overflow{
-	clear: both;
+    clear: both;
 }
 .container ul li a{
-	color:white;
+    color:white;
     display:block;
     font-weight: 600;
     text-decoration:none;
     transition: all 0.6s;
 }
 .container ul li a:hover{
-	color:red;
-	text-decoration:underline;	
-	
+    color:red;
+    text-decoration:underline;  
+    
 }
 
 /* ---------------------End Menu--------------------- */
@@ -318,14 +346,15 @@ cf::after, cf::before{
 }
 
 
-.box-gamehot, .box-gamehot-last{
+.box-gamehot{
     width: 80px;
-    height: 97px;
+   
     float: left;
     margin-bottom: 5px;
 }
 .box-gamehot{
-    margin-right: 15px;
+    
+    padding: 0px 5px;
 }
 
 .box-gamehot > a > img, .box-gamehot-last > a > img{
@@ -334,11 +363,11 @@ cf::after, cf::before{
     border-radius: 15%;
     transition: all 1s;
 }
-.box-gamehot > a > img:hover, .box-gamehot-last > a > img:hover{
+.box-gamehot > a > img:hover{
     opacity: 0.5;
     border-radius: 0%;
 }
-.box-gamehot > h3, .box-gamehot-last > h3{
+.box-gamehot > h3{
     padding: 0px;
     margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -346,11 +375,11 @@ cf::after, cf::before{
     font-weight: 200;
     text-align: center;
 }
-.box-gamehot > h3 > a, .box-gamehot-last > h3 > a{
+.box-gamehot > h3 > a{
     text-decoration: none;
     color: darkcyan;
 }
-.box-gamehot > h3 > a:hover, .box-gamehot-last > h3 > a:hover{
+.box-gamehot > h3 > a:hove{
     text-decoration: underline;
     color: red;
 }
@@ -362,67 +391,75 @@ cf::after, cf::before{
 .theloai-game{
     width: inherit;
     overflow: auto;
-	background:white;
-    margin-bottom: 10px;
-	border-top: 2px solid #3399FF;
-	background: rgba(248, 248, 255, 0.5);
-	border-radius: 1%;
+    background:white;
+    margin-bottom: 20px;
+    border-top: 2px solid #3399FF;
+    background: rgba(248, 248, 255, 0.9);
+    border-radius: 1%;
     box-shadow: 5px 5px 5px #666;
     -moz-box-shadow: 5px 5px 5px #666;
     -webkit-box-shadow: 5px 5px 5px #666;
+    text-decoration: none;
 }
 .theloai-game header{
-	padding:20px 0px 0px 20px;
-	margin:0px;
-	font-size:22px;
-	float:left;
-	font-weight:bold;
-	color:#009;
-	text-decoration:underline;
+    padding:20px 0px 0px 20px;
+    margin:0px;
+    font-size:22px;
+    float:left;
+    font-weight:bold;
+    color:#009;
+
+    text-decoration: none;
 }
 .theloai-game .xthem{
-	width:inherit;
+    width:inherit;
     padding-top:8px;
     text-align: right;
+    text-decoration: none;
 }
 .theloai-game .xthem input{
-	border-radius:20px;
+    border-radius:20px;
     line-height:25px;
     outline: none;
     cursor: pointer;
-	background: rgb(0, 191, 255);
+    background: rgb(0, 191, 255);
     color:white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     padding: 2px 10px;
     margin-right: 15px;
+    text-decoration: none;
 }
 .theloai-game .xthem input:hover{
-	background-color: rgb(255, 153, 153);
+    background-color: rgb(255, 153, 153);
     transition-property: background;
     transition-duration: 0.5s;
+    text-decoration: none;
 }
 .game-theloai-game{
-	float:left;
-	margin:10px;
-	text-align:center;
-	width:160px;
-    border: 1px solid #3399FF;	
-    background-color: white;
+    float:left;
+    margin:10px;
+    text-align:center;
+    width:160px;
+    height:160px;
+    border: 1px solid #3399FF;  
+    background-color: #E2F5F1;
+    border-radius: 8px 8px 8px 8px;
 }
 .game-theloai-game img{
-	width:160px;	
-	height:100px;
+    width:160px;    
+    height:109px;
+    border-radius: 8px 8px 0px 0px;
 }
 .game-theloai-game a{
     font-size: 12px;
-	text-decoration:none;
-	color:black;	
+    text-decoration:none;
+    color:black;    
 }
 /************** End Thể Loại Game **************/
 
 /************** Start Form Login **************/
 .title-login-register{
-	width: 550px;
+    width: 550px;
     width: fit-content;
     padding: 8px 20px;
     background-color: rgb(129, 220, 0);
@@ -534,12 +571,12 @@ cf::after, cf::before{
 }
 .box-playgame{
     width: 100%;
-    height: 900px;
+    height: auto;
     box-sizing: border-box; 
     padding: 5px;
     background-color: white;
     border: 3px solid rgb(129, 220, 0);
-    border-radius: 0px 5px 5px 5px;
+    border-radius: 0px 0px 10px 10px;
     margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -584,10 +621,10 @@ cf::after, cf::before{
   .like #like label:hover { transform: rotate(-15deg) scale(1.3); }
   
   .like p{
-      float:left;	
+      float:left;   
   }
   .soluong{
-      line-height:55px;	
+      line-height:55px; 
   }
   
   .like #dow label:before{
@@ -606,6 +643,11 @@ cf::after, cf::before{
 /* Start chú thích và hướng dẫn chơi */
 .content-box-playgame{
     margin-top: 30px;
+}
+
+.content-box-playgame-flash{
+    margin-top: 30px;
+    height: 500px;
 }
 .textview p {
     padding-bottom: 8px;
@@ -653,19 +695,19 @@ cf::after, cf::before{
 .title-game-cung-theloai{
     box-sizing:border-box;
     width:inherit;
-	height:40px;
-	line-height:40px;
-	background: linear-gradient(to bottom, white 10%, #b2f0f0 100%);
+    height:40px;
+    line-height:40px;
+    background: linear-gradient(to bottom, white 10%, #b2f0f0 100%);
     border-bottom:1px solid #0CF;
 }
 .title-game-cung-theloai > .tentheloai{
-	background:white;
+    background:white;
     width: fit-content;
     height: inherit;
-	border-top: 1px solid #0CF;
+    border-top: 1px solid #0CF;
     border-right: 1px thick #0CF;
-	border-radius: 0 33px 0 0;
-	padding-right:20px;
+    border-radius: 0 33px 0 0;
+    padding-right:20px;
     padding-left:5px;
     line-height: 40px;
 
@@ -844,7 +886,7 @@ cf::after, cf::before{
 /************** Start Quảng cáo **************/
 .quangcao{
     width: inherit;
-    margin-top: 20px;
+    margin-top: 8px;
     box-shadow: 
     1px 1px 2px black,
     2px 2px 4px gray,
@@ -928,6 +970,41 @@ cf::after, cf::before{
     font-size: 11px;
     opacity: 0.8;
 }
+
+            .dropbtn {
+              background-color: #57bdf4;
+              color: white;
+              padding: 7px;
+              font-size: 16px;
+              border: none;
+          }
+
+          .dropdown {
+              position: relative;
+              display: inline-block;
+          }
+
+          .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f1f1f1;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+          }
+
+          .dropdown-content a {
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+          }
+
+          .dropdown-content a:hover {background-color: #ddd;}
+
+          .dropdown:hover .dropdown-content {display: block;}
+
+          .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 /************** End Game chơi nhiều nhất **************/
 /* ---------------------End Content Right--------------------- */

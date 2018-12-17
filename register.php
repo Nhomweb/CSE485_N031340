@@ -1,240 +1,235 @@
-<!DOCTYPE html>
-<html lang="vi">
+<?php
+$title='Đăng ký';
+require('header.php');
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="wowslider/wowslider.css">
-    <script type="text/javascript" src="wowslider/jquery.js"></script>
-    <title>Document</title>
-</head>
+?>
 
-<body>
-    <!-- Start Header -->
-    <header class="header-top">
-        <section class="container">
-            <section class="logo">
-                <img src="images/logo.jpg" alt="Logo">
-            </section>
-            <form action="#" class="searchform cf" method="post">
-                <input type="text" placeholder="Bạn muốn chơi game gì?">
-                <button type="submit" name="search">Search</button>
-            </form>
-            <button type="submit" id="button-login"><a href="login.php">Đăng nhập</a></button>
-            <button type="submit" id="button-register"><a href="register.php">Đăng ký</a></button>
-        </section>
-    </header>
-    <!-- End Header -->
+<!-- Start Wrapper  -->
+<div class="wrapper">
+        <div class="content-left">
+               <?php
+    include('hot.php')?>
 
 
-    <!-- Start Menu -->
-    <nav class="menu">
-        <section class="container">
-            <ul>
-                <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="#">Game mới</a></li>
-                <li><a href="#">Game chơi nhiều</a></li>
-                <li><a href="#">Nấu ăn</a></li>
-                <li><a href="#">Hành động</a></li>
-                <li><a href="#">Đua xe</a></li>
-                <li><a href="#">Thời trang</a></li>
-                <li><a href="#">Thể thao</a></li>
-                <li><a href="#">Thể thao</a></li>
-                <li><a href="#">Thể loại khác</a></li>
-            </ul>
-        </section>
-    </nav>
+                            <?php require('dangky/includes/config.php');
 
-    <!-- End Menu -->
+//if logged in redirect to members page
+                            if( $user->is_logged_in() ){ header('Location: index.php'); exit(); }
 
-    <!-- Start Wrapper  -->
-    <section class="wrapper">
-        <section class="content-left">
-            <section class="game-hot">
-                <section class="slider">
-                    <div id="wowslider-container1">
-                        <div class="ws_images">
-                            <ul>
-                                <li><a href="#" target="_self"><img src="images/game_1.jpg" alt="game_1" title="Truy tìm pokemon trong vườn "
-                                            id="wows1_0" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_2.jpg" alt="game_2" title="Tiệm tóc của Barbie"
-                                            id="wows1_1" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_3.jpg" alt="game_3" title="Chú khỉ buồn tìm ninja 2"
-                                            id="wows1_2" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_4.jpg" alt="game_4" title="Phiêu Lưu Cùng Tên Lửa"
-                                            id="wows1_3" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_5.jpg" alt="game_5" title="Làm bánh tình yêu"
-                                            id="wows1_4" /></a></li>
-                            </ul>
+//if form has been submitted process it
+                            if(isset($_POST['submit'])){
+
+                                if (!isset($_POST['username'])) $error[] = "Please fill out all fields";
+                                if (!isset($_POST['email'])) $error[] = "Please fill out all fields";
+                                if (!isset($_POST['password'])) $error[] = "Please fill out all fields";
+                                if (!isset($_POST['fullname']));
+                                if (!isset($_POST['sex']));
+                                if (!isset($_POST['birthday']));
+                                if (!isset($_POST['address']));
+
+                                $username = $_POST['username'];
+
+    //very basic validation
+                                if(!$user->isValidUsername($username)){
+                                    $error[] = 'Usernames must be at least 4 Alphanumeric characters';
+                                } else {
+                                    $stmt = $db->prepare('SELECT username FROM user WHERE username = :username');
+                                    $stmt->execute(array(':username' => $username));
+                                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                                    if(!empty($row['username'])){
+                                        $error[] = 'Username provided is already in use.';
+                                    }
+
+                                }
+
+                                if(strlen($_POST['password']) < 6){
+                                    $error[] = 'Password is too short.';
+                                }
+
+                                if(strlen($_POST['passwordConfirm']) < 6){
+                                    $error[] = 'Confirm password is too short.';
+                                }
+
+                                if($_POST['password'] != $_POST['passwordConfirm']){
+                                    $error[] = 'Passwords do not match.';
+                                }
+
+    //email validation
+                                $email = htmlspecialchars_decode($_POST['email'], ENT_QUOTES);
+                                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                                    $error[] = 'Please enter a valid email address';
+                                } else {
+                                    $stmt = $db->prepare('SELECT email FROM user WHERE email = :email');
+                                    $stmt->execute(array(':email' => $email));
+                                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                                    if(!empty($row['email'])){
+                                        $error[] = 'Email provided is already in use.';
+                                    }
+
+                                }
+
+
+    //if no errors have been created carry on
+                                if(!isset($error)){
+
+        //hash the password
+                                    $hashedpassword = $user->password_hash($_POST['password'], PASSWORD_BCRYPT);
+
+        //create the activasion code
+                                    $activasion = md5(uniqid(rand(),true));
+
+                                    try {
+
+            //insert into database with a prepared statement
+                                        $stmt = $db->prepare('INSERT INTO user (username,password,email,fullname,sex,birthday,address,active) VALUES (:username, :password, :email,:fullname, :sex, :birthday, :address, :active)');
+                                        $stmt->execute(array(
+                                            ':username' => $username,
+                                            ':password' => $hashedpassword,
+                                            ':email' => $email,
+                                            ':fullname' => $fullname,
+                                            ':sex' => $sex,
+                                            ':birthday' => $email,
+                                            ':address' => $address,
+                                            ':active' => $activasion
+                                        ));
+                                        $id = $db->lastInsertId('id');
+
+            //send email
+                                        $to = $_POST['email'];
+                                        $subject = "Registration Confirmation";
+                                        $body = "<p>Thank you for registering at demo site.</p>
+                                        <p>To activate your account, please click on this link: <a href='".DIR."form_active.php?x=$id&y=$activasion'>".DIR."form_active.php?x=$id&y=$activasion</a></p>
+                                        <p>Regards Site Admin</p>";
+
+                                        $mail = new Mail();
+                                        $mail->setFrom(SITEEMAIL);
+                                        $mail->addAddress($to);
+                                        $mail->subject($subject);
+                                        $mail->body($body);
+                                        $mail->send();
+
+            //redirect to index page
+                                        header('Location: register.php?action=joined');
+                                        exit;
+
+        //else catch the exception and show the error.
+                                    } catch(PDOException $e) {
+                                        $error[] = $e->getMessage();
+                                    }
+
+                                }
+
+                            }
+
+
+                //check for any errors
+                            if(isset($error)){
+                                foreach($error as $error){
+                                    echo '<p class="bg-danger">'.$error.'</p>';
+                                }
+                            }
+
+                //if action is joined show sucess
+                            if(isset($_GET['action']) && $_GET['action'] == 'joined'){
+                                echo "<h2 class='bg-success'>Registration successful, please check your email to activate your account.</h2>";
+                            }
+                            ?>
+
+                            <section class="login">
+                                <header class="title-login-register">ĐĂNG KÝ THÀNH VIÊN</header>
+
+                                <form action="" method="post" id="login-register-form"><hr>
+
+
+                                    <div class="row">
+                                        <label for="username">Tên đăng nhập<span class="red asterisk bold"> *</span></label>
+                                        <input name="username" id="username" type="text" required autofocus pattern="^[a-z\d\.]{4,}$" title="Ít nhất 4 kí tự & không khoảng trắng" value="<?php if(isset($error)){ echo htmlspecialchars($_POST['username'], ENT_QUOTES); } ?>" tabindex="1">
+                                    </div>
+                                    <div class="row">
+                                        <label for="email">Email<span class="red asterisk bold"> *</span></label>
+                                        <input name="email" id="email" type="email" required value="<?php if(isset($error)){ echo htmlspecialchars($_POST['email'], ENT_QUOTES); } ?>" tabindex="2">
+                                    </div>
+
+                                    <div class="row">
+                                        <label for="password">Mật khẩu<span class="red asterisk bold"> *</span></label>
+                                        <input name="password" id="password" type="password" required pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                                        title="Ít nhất 6 kí tự bao gồm chữ hoa, chữ thường, số">
+
+                                    </div>
+                                    <div class="row">
+                                        <label for="password">Nhập lại mật khẩu<span class="red asterisk bold"> *</span></label>
+                                        <input name="passwordConfirm" id="passwordConfirm" type="password" required pattern="(?=^.{6,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                                        title="Ít nhất 6 kí tự bao gồm chữ hoa, chữ thường, số">
+
+                                    </div>
+
+                                    <div class="row">
+                                        <label for="name">Họ & tên</label>
+                                        <input name="name" id="name" type="text" required value="<?php if(isset($error)){ echo htmlspecialchars($_POST['fullname'], ENT_QUOTES); } ?>">
+                                    </div>
+                                    <div class="row">
+                                        <label for="">Giới tính</label>
+                                        <input name="sex" value="nam" type="radio">Nam&nbsp;&nbsp;
+                                        <input name="sex" value="nu" type="radio" required value="<?php if(isset($error)){ echo htmlspecialchars($_POST['sex'], ENT_QUOTES); } ?>">Nữ
+                                    </div>
+                                    <div class="row">
+                                        <label for="birthday">Ngày sinh</label>
+                                        <input name="birthday" id="birthday" type="date" required value="<?php if(isset($error)){ echo htmlspecialchars($_POST['birthday'], ENT_QUOTES); } ?>">
+                                    </div>
+                                    <div class="row">
+                                        <label for="address">Địa chỉ</label>
+                                        <input name="address" id="address" type="text">
+                                    </div>
+                                    <div class="row-submit">
+                                     <input type="submit" name="submit" value="Đăng ký" class="btn btn-primary btn-block btn-lg" tabindex="5">
+                                 </div>
+
+
+                             </form>
+                         </section>
+                     </div>
+                     <div class="content-right">
+                        <section class="quangcao">
+                            <a href="http://www.trungtamcanho.com/tong-hop-can-ho-quan-2---chung-cu-quan-2-gia-re" target="_blank"><img
+                                src="images/quangcao/quangcao_9.gif" alt=""></a>
+                            </section>
+                            <div class="game-choinhieunhat">
+                                <header class="title-game-choinhieunhat">Game chơi nhiều nhất</header>
+                                <section class="content-game-choinhieunhat">
+
+                                  <?php
+                                  for ($i=0; $i <count($nhieunhat) ; $i++) { 
+                                    if ($i==0) {
+                                        ?>
+                                        <article class="box-game-choinhieunhat">
+                                            <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                                            <section>
+                                                <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                                                <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
+                                            </section>
+                                        </article>
+                                        <?php
+                                    }
+                                    else{
+                                        ?> 
+                                        <article class="box-game-choinhieunhat">
+                                            <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                                            <section>
+                                                <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                                                <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
+                                            </section>
+                                        </article>
+                                        <?php
+                                    }
+
+                                }
+                                ?>
+                            </section>
                         </div>
-                        <div class="ws_bullets">
-                            <div>
-                                <a href="#" title="game_1">1</a>
-                                <a href="#" title="game_2">2</a>
-                                <a href="#" title="game_3">3</a>
-                                <a href="#" title="game_4">4</a>
-                                <a href="#" title="game_5">5</a>
-                            </div>
-                        </div>
                     </div>
-                </section>
-                <aside class="sidebar">
-                    <header class="title-gamehot">Game hay</header>
-                    <section class="content-gamehot">
-                        <article class="box-gamehot">
-                            <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
-                        </article>
-                        <article class="box-gamehot">
-                            <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
-                        </article>
-                        <article class="box-gamehot-last">
-                            <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
-                        </article>
-                        <article class="box-gamehot">
-                            <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
-                        </article>
-                        <article class="box-gamehot">
-                            <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
-                        </article>
-                        <article class="box-gamehot-last">
-                            <a href="#"><img src="images/image-game.jpg" alt=""></a>
-                            <h3><a href="#">Ngôi nhà vui vẻ</a></h3>
-                        </article>
-                    </section>
-                </aside>
-            </section>
-            <section class="login">
-                <header class="title-login-register">ĐĂNG KÝ THÀNH VIÊN</header>
-                <form action="" method="post" id="login-register-form">
-                    <div class="row">
-                        <label for="username">Tên đăng nhập<span class="red asterisk bold"> *</span></label>
-                        <input name="username" id="username" type="text" required autofocus pattern="^[a-z\d\.]{6,}$" title="Ít nhất 8 kí tự & không khoảng trắng">
-                    </div>
-                    <div class="row">
-                        <label for="password">Mật khẩu<span class="red asterisk bold"> *</span></label>
-                        <input name="password" id="password" type="password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
-                            title="Ít nhất 8 kí tự bao gồm chữ hoa, chữ thường, số">
-                    </div>
-                    <div class="row">
-                        <label for="email">Email<span class="red asterisk bold"> *</span></label>
-                        <input name="email" id="email" type="email" required>
-                    </div>
-                    <div class="row">
-                        <label for="name">Họ & tên</label>
-                        <input name="name" id="name" type="text">
-                    </div>
-                    <div class="row">
-                        <label for="">Giới tính</label>
-                        <input name="sex" value="nam" type="radio">Nam&nbsp;&nbsp;
-                        <input name="sex" value="nu" type="radio">Nữ
-                    </div>
-                    <div class="row">
-                        <label for="birthday">Ngày sinh</label>
-                        <input name="birthday" id="birthday" type="date">
-                    </div>
-                    <div class="row">
-                        <label for="address">Địa chỉ</label>
-                        <input name="address" id="address" type="text">
-                    </div>
-                    <div class="row-submit">
-                        <button type="submit" name="submit">Đăng ký</button>
-                        <button type="reset">Làm lại</button>
-                    </div>
-
-
-                </form>
-            </section>
-        </section>
-        <aside class="content-right">
-            <section class="quangcao">
-                <a href="http://indogamersonline.blogspot.com/2011/05/game-untuk-nokia-2700-classic-cricket.html" target="_blank"><img
-                        src="images/quangcao/quangcao_1.gif" alt=""></a>
-            </section>
-            <section class="game-choinhieunhat">
-                <header class="title-game-choinhieunhat">Game chơi nhiều nhất</header>
-                <section class="content-game-choinhieunhat">
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                    <article class="box-game-choinhieunhat-last">
-                        <a href=""><img src="images/image-game.jpg" alt=""></a>
-                        <section>
-                            <a href="#"><h5>Đua xe địa hình</h5></a>
-                            <p>Lượt chơi: 25034</p>
-                        </section>
-                    </article>
-                </section>
-            </section>
-        </aside>
-    </section>
-    <!-- End Wrapper -->
-    <section class="sitemap">
-        <div class="box-sitemap"><a href="#">Hành động</a></div>
-        <div class="box-sitemap"><a href="#">Đua xe</a></div>
-        <div class="box-sitemap"><a href="#">Thể thao</a></div>
-        <div class="box-sitemap"><a href="#">Thể thao</a></div>
-        <div class="box-sitemap-last"><a href="#">Bạn gái</a></div>
-        <div class="box-sitemap"><a href="#">Phiêu lưu</a></div>
-        <div class="box-sitemap"><a href="#">Nhập vai</a></div>
-        <div class="box-sitemap"><a href="#">Hành động</a></div>
-        <div class="box-sitemap"><a href="#">Thể thao</a></div>
-        <div class="box-sitemap-last"><a href="#">Văn phòng</a></div>
-    </section>
-    <footer class="footer">
-        <a href="#"><img src="images/facebook.png" /></a>
-        <a href="#"><img src="images/gmail.png" /></a>
-        <a href="#"><img src="images/contact.png" /></a>
-        <a href="#"><img src="images/map.png" /></a>
-        <div>
-            <p><b>Chơi game lành mạnh, vui vẻ, sắp xếp thời gian hợp lý, tận hưởng cuộc sống lành mạnh, học tập tốt và lao động
-                tốt.
-                </br>
-                Chịu trách nhiệm nội dung: Nguyễn Nhật - Trường Giang. ©2018 Đại học Thủy Lợi, Địa chỉ: 175 TÂY SƠN, ĐỐNG ĐA, HÀ NỘI.  Điện thoại: 0926 053 033.</b></p>
-        </div>
-    </footer>
-    <!-- Start Wowslider -->
-    <script type="text/javascript" src="wowslider/wowslider.js"></script>
-    <script type="text/javascript" src="wowslider/script.js"></script>
-    <!-- End Wowslider -->
-</body>
-
-</html>
+                </div>
+                <?php 
+                require('footer.php');
+                ?>
