@@ -1,6 +1,7 @@
 <?php
 $title='Đăng nhập';
 require('header.php');
+
 ?>
 
 <!-- Start Wrapper  -->
@@ -10,11 +11,13 @@ require('header.php');
     include('hot.php')?>
 
                             <?php
+                             session_start(); 
+
 //include config
                             require_once('dangky/includes/config.php');
 
 //check if already logged in move to home page
-                            if( $user->is_logged_in() ){ header('Location: index.php'); exit(); }
+                            
 
 //process login form if submitted
                             if(isset($_POST['submit'])){
@@ -30,7 +33,9 @@ require('header.php');
                                         $error[] = 'A password must be entered';
                                     }
                                     $password = $_POST['password'];
-
+                                    $username = $_POST["username"];
+        
+ 
                                     if($user->login($username,$password)){
                                         $_SESSION['username'] = $username;
                                         header('Location: index.php');
@@ -82,7 +87,7 @@ if(isset($_GET['action'])){
 
 <section class="login">
     <header class="title-login-register">ĐĂNG NHẬP</header>
-    <form action="" method="post" id="login-register-form">
+    <form action="login.php" method="POST" id="login-register-form">
         <div class="row">
             <label for="username">Tên đăng nhập<span class="red asterisk bold"> *</span></label>
             <input name="username" id="username" type="text" required autofocus value="<?php if(isset($error)){ echo htmlspecialchars($_POST['username'], ENT_QUOTES); } ?>" tabindex="1">
@@ -107,14 +112,14 @@ if(isset($_GET['action'])){
         <header class="title-game-choinhieunhat">Game chơi nhiều nhất</header>
         <section class="content-game-choinhieunhat">
 
-          <?php
+           <?php
           for ($i=0; $i <count($nhieunhat) ; $i++) {
             if ($i==0) {
                 ?>
                 <article class="box-game-choinhieunhat">
-                    <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
                     <section>
-                        <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <a href="playgame.php?id_games=<?=$nhieunhat[$i]->id_game?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
                         <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
                     </section>
                 </article>
@@ -123,9 +128,9 @@ if(isset($_GET['action'])){
             else{
                 ?> 
                 <article class="box-game-choinhieunhat">
-                    <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
                     <section>
-                        <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <a href="playgame.php?id_games=<?=$nhieunhat[$i]->id_game?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
                         <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
                     </section>
                 </article>

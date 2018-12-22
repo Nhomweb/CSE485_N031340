@@ -83,7 +83,7 @@ require('header.php');
                                     try {
 
             //insert into database with a prepared statement
-                                        $stmt = $db->prepare('INSERT INTO user (username,password,email,fullname,sex,birthday,address,active) VALUES (:username, :password, :email,:fullname, :sex, :birthday, :address, :active)');
+                                        $stmt = $db->prepare('INSERT INTO user(username,password,email,fullname,sex,birthday,address,active) VALUES (:username, :password, :email,:fullname, :sex, :birthday, :address, :active)');
                                         $stmt->execute(array(
                                             ':username' => $username,
                                             ':password' => $hashedpassword,
@@ -199,33 +199,33 @@ require('header.php');
                                 <header class="title-game-choinhieunhat">Game chơi nhiều nhất</header>
                                 <section class="content-game-choinhieunhat">
 
-                                  <?php
-                                  for ($i=0; $i <count($nhieunhat) ; $i++) { 
-                                    if ($i==0) {
-                                        ?>
-                                        <article class="box-game-choinhieunhat">
-                                            <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
-                                            <section>
-                                                <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
-                                                <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
-                                            </section>
-                                        </article>
-                                        <?php
-                                    }
-                                    else{
-                                        ?> 
-                                        <article class="box-game-choinhieunhat">
-                                            <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
-                                            <section>
-                                                <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
-                                                <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
-                                            </section>
-                                        </article>
-                                        <?php
-                                    }
+                                   <?php
+          for ($i=0; $i <count($nhieunhat) ; $i++) {
+            if ($i==0) {
+                ?>
+                <article class="box-game-choinhieunhat">
+                    <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <section>
+                        <a href="playgame.php?id_games=<?=$nhieunhat[$i]->id_game?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
+                    </section>
+                </article>
+                <?php
+            }
+            else{
+                ?> 
+                <article class="box-game-choinhieunhat">
+                    <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <section>
+                        <a href="playgame.php?id_games=<?=$nhieunhat[$i]->id_game?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
+                    </section>
+                </article>
+                <?php
+            }
 
-                                }
-                                ?>
+        }
+        ?>
                             </section>
                         </div>
                     </div>

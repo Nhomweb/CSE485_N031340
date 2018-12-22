@@ -1,3 +1,7 @@
+body {
+    background-color: url("back-ground.jpg");
+}
+
 .nav-side-menu {
     font-family: verdana;
     font-size: 12px;

@@ -13,9 +13,31 @@ $danhmuctin=$theloai['danhmuctin'];
 $list=$theloai['list'];
 $games=$c_web->chitiet();
 $chitiet=$games['chitiet'];
+$relatednews=$games['relatednews'];
 
+$game=$c_web->timkiem();
+$game=$game['game'];
+$user = $c_web->dangnhap();
+if (isset($_POST['dangnhap'])) {
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+    $user=$c_web->dangnhap($username,$password);
+}
+
+
+if (isset($_POST['binhluan'])) {
+    if (isset($_SESSION['id'])) {
+        $id=$_SESSION['id'];
+        $id_games=$_SESSION['id_games'];
+        $noidung=$_SESSION['noidung'];
+        $comment=$c_web->themBinhluan();
+    }else{
+        $_SESSION['chua_dang_nhap']="vui long dang nhap de binh luan";
+    }
+    
+}
 //$thanh_phantrang=$theloai['thanh_phantrang'];
-//print_r($chitiet);
+//print_r($game);
 ?>
 
 
@@ -32,23 +54,40 @@ $chitiet=$games['chitiet'];
     <link rel="stylesheet prefetch" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
     <script type="text/javascript" src="wowslider/script.js"></script>
     <script type="text/javascript" src="wowslider/jquery.js"></script>
+    <link rel="stylesheet" href="font-awesome.css">
+         
     <title><?php if(isset($title)){ echo $title; }?></title>
+
+
 </head>
 
 <body>
-
-
  <header class="header-top">
     <section class="container">
         <section class="logo">
             <a href="index.php"><img src="images/logo.jpg" alt="Logo"></a>
         </section>
-        <form action="#" class="searchform cf" method="post">
-            <input type="text" placeholder="Bạn muốn chơi game gì?">
-            <button type="submit" name="search">Search</button>
+        <form action="timkiem.php" class="searchform cf" method="post">
+
+            <input class="form-control" type="text" name="search" placeholder="Bạn muốn chơi game gì?">
+            <button onclick="search();" class="btn btn-default" ><span class="glyphicon glyphicon-search"">Search</button></span>
         </form>
-        <li type="submit" id="button-login"><a href="login.php">Đăng nhập</a></li>
+          <?php
+           if(isset($_SESSION['username']) && $_SESSION['username']){
+            ?>
+              <li type="submit" id="button-login"><a href="login.php"><?=$_SESSION['username']?></a></li> 
+        <li type="submit" id="button-register"><a href="dangky/logout.php">Đăng xuất</a></li>
+        <?php
+           }
+           else{
+            ?>
+               <li type="submit" id="button-login"><a href="login.php">Đăng nhập</a></li>
         <li type="submit" id="button-register"><a href="register.php">Đăng ký</a></li>
+
+            <?php
+           }
+        ?>
+        
     </section>
 </header>
 <!-- End Header -->

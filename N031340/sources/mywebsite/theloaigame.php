@@ -28,9 +28,9 @@ foreach ($list as $list) {
 foreach ($danhmuctin as $tin) {
     ?>
     <article class="box-game">
-                <a href="#"><img src="games/img/<?=$tin->hinhgame?>" alt=""></a>
+                <a href="playgame.php?id_games=<?php echo $tin->id_game; ?>&theloai=<?php echo $tin->id_theloai; ?>"><img src="games/img/<?=$tin->hinhgame?>" alt=""></a>
                 <section>
-                    <a href="#"><h5><?=$tin->tengame?></h5></a>
+                    <a href="playgame.php?id_games=<?php echo $tin->id_game; ?>&theloai=<?php echo $tin->id_theloai; ?>"><h5><?=$tin->tengame?></h5></a>
                     <p>Lượt chơi: <?=$tin->luotchoi?></p>
                 </section>
             </article>
@@ -113,9 +113,9 @@ foreach ($menu as $mn) {
             if ($i==0) {
                 ?>
                 <article class="box-game-choinhieunhat">
-                    <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>"><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
                     <section>
-                        <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
                         <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
                     </section>
                 </article>
@@ -124,9 +124,9 @@ foreach ($menu as $mn) {
             else{
                 ?> 
                 <article class="box-game-choinhieunhat">
-                    <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>"><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
                     <section>
-                        <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
                         <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
                     </section>
                 </article>

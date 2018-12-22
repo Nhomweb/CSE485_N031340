@@ -12,7 +12,7 @@ define('DBPASS','');
 define('DBNAME','mywebsite');
 
 //application address
-define('DIR','http://localhost/mywebsite/');
+define('DIR','http://localhost/N031340/mywebsite/');
 define('SITEEMAIL','NhatNV62@wru.vn');
 
 try {

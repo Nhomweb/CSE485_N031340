@@ -387,7 +387,7 @@ cf::after, cf::before{
 /* End Sidebar */
 /************** End Game Hot **************/
 
-/************** Start Thể Loại Game **************/
+/************** Start Thá»ƒ Loáº¡i Game **************/
 .theloai-game{
     width: inherit;
     overflow: auto;
@@ -455,7 +455,10 @@ cf::after, cf::before{
     text-decoration:none;
     color:black;    
 }
-/************** End Thể Loại Game **************/
+a{
+    text-decoration: none;
+}
+/************** End Thá»ƒ Loáº¡i Game **************/
 
 /************** Start Form Login **************/
 .title-login-register{
@@ -586,7 +589,7 @@ cf::after, cf::before{
     height: 600px;
 }
 
-/* Start phần Like - Share */
+/* Start pháº§n Like - Share */
 .like{
     display: inline-block;
   }
@@ -623,6 +626,19 @@ cf::after, cf::before{
   .like p{
       float:left;   
   }
+
+
+  .like1{
+    display: inline-block;
+    margin-left: 200px;
+  }
+   .like1 p{
+      float:left;   
+  }
+  .like2{
+    display: inline-block;
+ }
+
   .soluong{
       line-height:55px; 
   }
@@ -638,9 +654,9 @@ cf::after, cf::before{
     color:#06F;
   }
   #share label:hover { transform: scale(1.3); }
-  /* End phần Like - share */
+  /* End pháº§n Like - share */
 
-/* Start chú thích và hướng dẫn chơi */
+/* Start chÃº thÃ­ch vÃ  hÆ°á»›ng dáº«n chÆ¡i */
 .content-box-playgame{
     margin-top: 30px;
 }
@@ -683,7 +699,7 @@ cf::after, cf::before{
     list-style-type: disc;
     margin: 0 0 0 30px;
 }
-/* End chú thích và hướng dẫn chơi */
+/* End chÃº thÃ­ch vÃ  hÆ°á»›ng dáº«n chÆ¡i */
 
 .game-cung-theloai{
     width: inherit;
@@ -883,7 +899,7 @@ cf::after, cf::before{
 
 
 /* ---------------------Start Content Right--------------------- */
-/************** Start Quảng cáo **************/
+/************** Start Quáº£ng cÃ¡o **************/
 .quangcao{
     width: inherit;
     margin-top: 8px;
@@ -892,9 +908,9 @@ cf::after, cf::before{
     2px 2px 4px gray,
     3px 3px 6px rgb(79, 79, 79);
 }
-/************** End Quảng Cáo **************/
+/************** End Quáº£ng CÃ¡o **************/
 
-/************** Start Game chơi nhiều nhất **************/
+/************** Start Game chÆ¡i nhiá»u nháº¥t **************/
 .game-choinhieunhat, .game-choinhieunhat > .title-game-choinhieunhat{
     box-sizing: border-box;
 }
@@ -1006,10 +1022,10 @@ cf::after, cf::before{
 
           .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-/************** End Game chơi nhiều nhất **************/
+/************** End Game chÆ¡i nhiá»u nháº¥t **************/
 /* ---------------------End Content Right--------------------- */
 
-/* Start Bổ trợ */
+/* Start Bá»• trá»£ */
 .red{
     color: red;
 }
@@ -1019,4 +1035,4 @@ cf::after, cf::before{
 .asterisk{
     font-size: 18px;
 }
-/* End Bổ trợ */
+/* End Bá»• trá»£ */

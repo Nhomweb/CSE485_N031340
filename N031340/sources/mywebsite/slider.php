@@ -13,9 +13,9 @@
             if ($i==0) {
                 ?>
                 <article class="box-game-choinhieunhat">
-                    <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
                     <section>
-                        <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <a href="playgame.php?id_games=<?=$nhieunhat[$i]->id_game?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
                         <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
                     </section>
                 </article>
@@ -24,9 +24,9 @@
             else{
                 ?> 
                 <article class="box-game-choinhieunhat">
-                    <a href=""><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
+                    <a href="playgame.php?id_games=<?php echo $nhieunhat[$i]->id_game; ?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><img src="games/img/<?=$nhieunhat[$i]->hinhgame?>" alt=""></a>
                     <section>
-                        <a href="#"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
+                        <a href="playgame.php?id_games=<?=$nhieunhat[$i]->id_game?>&theloai=<?php echo $nhieunhat[$i]->id_theloai; ?>"><h5><?=$nhieunhat[$i]->tengame?></h5></a>
                         <p>Lượt chơi: <?=$nhieunhat[$i]->luotchoi?></p>
                     </section>
                 </article>
@@ -51,9 +51,9 @@
         if ($i==0) {
             ?>
             <article class="box-game-choinhieunhat">
-                <a href=""><img src="games/img/<?=$yeuthich[$i]->hinhgame?>" alt=""></a>
+                <a href="playgame.php?id_games=<?php echo $yeuthich[$i]->id_game; ?>&theloai=<?php echo $yeuthich[$i]->id_theloai; ?>"><img src="games/img/<?=$yeuthich[$i]->hinhgame?>" alt=""></a>
                 <section>
-                    <a href="#"><h5><?=$yeuthich[$i]->tengame?></h5></a>
+                    <a href="playgame.php?id_games=<?php echo $yeuthich[$i]->id_game; ?>&theloai=<?php echo $yeuthich[$i]->id_theloai; ?>"><h5><?=$yeuthich[$i]->tengame?></h5></a>
                     <p>Lượt thích: <?=$yeuthich[$i]->luotyeuthich?></p>
                 </section>
             </article>
@@ -61,10 +61,10 @@
         }
         else{
             ?>
-            <article class="box-game-choinhieunhat">
-                <a href=""><img src="games/img/<?=$yeuthich[$i]->hinhgame?>" alt=""></a>
+           <article class="box-game-choinhieunhat">
+                <a href="playgame.php?id_games=<?php echo $yeuthich[$i]->id_game; ?>&theloai=<?php echo $yeuthich[$i]->id_theloai; ?>"><img src="games/img/<?=$yeuthich[$i]->hinhgame?>" alt=""></a>
                 <section>
-                    <a href="#"><h5><?=$yeuthich[$i]->tengame?></h5></a>
+                    <a href="playgame.php?id_games=<?php echo $yeuthich[$i]->id_game; ?>&theloai=<?php echo $yeuthich[$i]->id_theloai; ?>"><h5><?=$yeuthich[$i]->tengame?></h5></a>
                     <p>Lượt thích: <?=$yeuthich[$i]->luotyeuthich?></p>
                 </section>
             </article>

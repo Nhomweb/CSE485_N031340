@@ -59,7 +59,7 @@ class M_web extends database{
 
 	//4
 	function getInra(){
-		$sql="SELECT * FROM theloaigame tlg INNER JOIN game g ON g.id_theloai=tlg.id_theloai GROUP BY tlg.id_theloai LIMIT 8 ";
+		$sql="SELECT id_game FROM game g ";
 		$this->setQuery($sql);
 		return $this->loadAllRows();
 	}
@@ -99,5 +99,28 @@ class M_web extends database{
 		$this->setQuery($sql);
 		return $this->loadRow(array($id_games));
 	}
+
+	function getRalatedNews($theloai){
+		$sql="SELECT * from game  where id_theloai=$theloai ORDER BY luotyeuthich DESC limit 12";
+		$this->setQuery($sql);
+		return $this->loadAllRows(array($theloai));
+
+	}
+
+	function search($key){
+		$sql="SELECT * FROM game WHERE tengame like '%$key%'";
+		$this->setQuery($sql);
+		return $this->loadAllRows(array($key));
+	}
+function dangnhap($username,$password){
+	$sql= "SELECT * from user WHERE username='$username' and password='$password'";
+	$this->setQuery($sql);
+	return $this->loadAllRows(array($username,$password));
+}
+function addComment($id,$id_game,$noidung){
+	$sql=" INSERT INTO comment(id,id_game,noidung) VALUES (?,?,?)";
+	$this->setQuery($sql);
+	return $this->execute(array($id,$id_game,$noidung));
+}
 }
 ?>
