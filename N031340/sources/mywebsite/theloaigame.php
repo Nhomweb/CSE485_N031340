@@ -1,7 +1,6 @@
 <?php
 $title='';
 require('header.php');
-
 ?>
 
 
@@ -18,7 +17,6 @@ foreach ($list as $list) {
     </header>
     <?php
 }
-
         ?>
      
 
@@ -40,7 +38,6 @@ foreach ($danhmuctin as $tin) {
        
 
 <?php
-
 $trang_hientai=isset($_GET['page']) ? $_GET['page'] : 1;
         $limit=16;
         $total_records=count($danhmuctin);
@@ -53,18 +50,12 @@ $trang_hientai=isset($_GET['page']) ? $_GET['page'] : 1;
         }
          $vitri=($trang_hientai-1)*$limit;
           $conn = mysqli_connect('localhost', 'root', '', 'mywebsite');
-
          $result = mysqli_query($conn, "SELECT * FROM game LIMIT $vitri, $limit");
-
-
 ?>
 
             <div style="text-align: center;">
                 <ul class="pagination">
                     <?php 
-
-
-
             // PHẦN HIỂN THỊ PHÂN TRANG
             // BƯỚC 7: HIỂN THỊ PHÂN TRANG
 foreach ($menu as $mn) {
@@ -74,7 +65,6 @@ foreach ($menu as $mn) {
                     if ($trang_hientai > 1 && $total_page > 1){
                         echo '<a href="theloaigame.php?id_loai=<?=$mn->id_theloai?>&page='.($trang_hientai-1).'">Prev</a> | ';
                     }
-
             // Lặp khoảng giữa
                     for ($i = 1; $i <= $total_page; $i++){
                 // Nếu là trang hiện tại thì hiển thị thẻ span
@@ -86,7 +76,6 @@ foreach ($menu as $mn) {
                             echo '<a href="theloaigame.php?id_loai=<?=$mn->id_theloai?>&page='.$i.'">'.$i.'</a> | ';
                         }
                     }
-
             // nếu trang_hientai < $total_page và total_page > 1 mới hiển thị nút prev
                     if ($trang_hientai < $total_page && $total_page > 1){
                         echo '<a href="theloaigame.php?id_loai=<?=$mn->id_theloai?>page='.($trang_hientai+1).'">Next</a> | ';
@@ -132,7 +121,6 @@ foreach ($menu as $mn) {
                 </article>
                 <?php
             }
-
         }
         ?>
     </section>

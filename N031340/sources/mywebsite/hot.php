@@ -3,25 +3,25 @@
         <div id="wowslider-container1">
             <div class="ws_images">
                 <ul>
-                    <li><a href="#" target="_self"><img src="images/game_1.jpg" alt="game_1" title="Truy tìm pokemon trong vườn "
+                    <li><a href="playgame.php?id_games=114&theloai=2" target="_self"><img src="games/img/Pokemon-phong-thu.jpg" alt="game_1" title="Pokemon phòng thủ"
                         id="wows1_0" /></a></li>
-                        <li><a href="#" target="_self"><img src="images/game_2.jpg" alt="game_2" title="Tiệm tóc của Barbie"
+                        <li><a href="playgame.php?id_games=340&theloai=4" target="_self"><img src="games/img/Phau-thuat-cho-Barbie.jpg" alt="game_2" title="Phẫu thuật cho Barbie"
                             id="wows1_1" /></a></li>
-                            <li><a href="#" target="_self"><img src="images/game_3.jpg" alt="game_3" title="Chú khỉ buồn tìm ninja 2"
+                            <li><a href="playgame.php?id_games=406&theloai=4" target="_self"><img src="games/img/ninja-rua.jpg" alt="game_3" title="Ninja rùa"
                                 id="wows1_2" /></a></li>
-                                <li><a href="#" target="_self"><img src="images/game_4.jpg" alt="game_4" title="Phiêu Lưu Cùng Tên Lửa"
+                                <li><a href="playgame.php?id_games=421&theloai=5" target="_self"><img src="games/img/doremon-va-nobita-phieu-luu.jpg" alt="game_4" title="Doremon và Nobita phiêu lưu"
                                     id="wows1_3" /></a></li>
-                                    <li><a href="#" target="_self"><img src="images/game_5.jpg" alt="game_5" title="Làm bánh tình yêu"
+                                    <li><a href="playgame.php?id_games=313&theloai=4" target="_self"><img src="games/img/Xuong-banh-Gato_Secure.jpg" alt="game_5" title="Xuởng bánh Gato Secure"
                                         id="wows1_4" /></a></li>
                                     </ul>
                                 </div>
                                 <div class="ws_bullets">
                                     <div>
-                                        <a href="#" title="Truy tìm pokemon trong vườn ">1</a>
-                                        <a href="#" title="Tiệm tóc của Barbie">2</a>
-                                        <a href="#" title="Chú khỉ buồn tìm ninja 2">3</a>
-                                        <a href="#" title="Phiêu Lưu Cùng Tên Lửa">4</a>
-                                        <a href="#" title="Làm bánh tình yêu">5</a>
+                                        <a href="playgame.php?id_games=114&theloai=2" title="Pokemon phòng thủ">1</a>
+                                        <a href="playgame.php?id_games=340&theloai=4" title="Phẫu thuật cho Barbie">2</a>
+                                        <a href="playgame.php?id_games=406&theloai=4" title="Ninja rùa">3</a>
+                                        <a href="playgame.php?id_games=421&theloai=5" title="Doremon và Nobita phiêu lưu">4</a>
+                                        <a href="playgame.php?id_games=313&theloai=4" title="Xuởng bánh Gato Secure">5</a>
                                     </div>
                                 </div>
                             </div>

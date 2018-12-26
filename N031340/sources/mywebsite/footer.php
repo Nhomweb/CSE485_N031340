@@ -15,9 +15,9 @@
 
 <footer class="footer">
     <a href="https://www.facebook.com/stthoctro/?ref=bookmarks"><img src="images/facebook.png" /></a>
-    <a href="#"><img src="images/gmail.png" /></a>
-    <a href="#"><img src="images/contact.png" /></a>
-    <a href="#"><img src="images/map.png" /></a>
+    <a href="https://www.plus.google.com/"><img src="images/gmail.png" /></a>
+    <a href="https://www.whatsapp.com/"><img src="images/contact.png" /></a>
+    <a href="https://www.google.com/maps/"><img src="images/map.png" /></a>
     <div>
         <p><b>Chơi game lành mạnh, vui vẻ, sắp xếp thời gian hợp lý, tận hưởng cuộc sống lành mạnh, học tập tốt và lao động
             tốt.

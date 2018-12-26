@@ -1,8 +1,11 @@
 <?php
+
+ob_start();
 include('controller/c_web.php');
 $c_web= new C_web();
 $noi_dung=$c_web->index();
 $hot=$noi_dung['hot'];
+$hot1=$noi_dung['hot1'];
 $menu=$noi_dung['menu'];
 $nhieunhat=$noi_dung['nhieunhat'];
 $yeuthich=$noi_dung['yeuthich'];
@@ -36,10 +39,15 @@ if (isset($_POST['binhluan'])) {
     }
     
 }
+
+
+
 //$thanh_phantrang=$theloai['thanh_phantrang'];
 //print_r($game);
 ?>
-
+<?php 
+ob_start();
+session_start(); ?>
 
 
 <!DOCTYPE html>
@@ -73,10 +81,10 @@ if (isset($_POST['binhluan'])) {
             <button onclick="search();" class="btn btn-default" ><span class="glyphicon glyphicon-search"">Search</button></span>
         </form>
           <?php
-           if(isset($_SESSION['username']) && $_SESSION['username']){
+           if(isset($_SESSION['username'])){
             ?>
-              <li type="submit" id="button-login"><a href="login.php"><?=$_SESSION['username']?></a></li> 
-        <li type="submit" id="button-register"><a href="dangky/logout.php">Đăng xuất</a></li>
+              <li type="submit" id="button-login"><a href="login.php">Xin chào <?=$_SESSION['username']?></a></li> 
+        <li type="submit" id="button-register"><a href="logout.php">Đăng xuất</a></li>
         <?php
            }
            else{
@@ -109,9 +117,94 @@ foreach ($menu as $mn) {
     <?php
 }
         ?>
+        <li><div class="dropdown">
+                        <button class="dropbtn">Thể loại khác</button>
+                        <div class="dropdown-content">
+                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=9">Trí tuệ</a>
+                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=10">Kinh dị</a>
+                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=11">Âm nhạc</a>
+                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=12">Văn phòng</a>
+                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=13">Trẻ em</a>
+                          
+                        </div>
+                    </div>
+                </li>
         </ul>
 
                </section>
             </div>
 
     <!-- End Menu -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style type="text/css">
+        .dropbtn {
+   
+    color: white;
+    padding: 6px;
+    font-size: 16px;
+    border: none;
+    height: 45px;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #57bdf4;
+    text-decoration: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  
+
+.dropdown-content {
+
+    display: none;
+    position: absolute;
+    background-color: #76b4d7;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-decoration: none;
+
+}
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+ a {
+
+    text-decoration: none;
+
+}
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: rgba(0,0,0,0.2);
+  text-decoration: none;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;
+  text-decoration: none;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {background-color: #3e8e41;
+  text-decoration: none;}
+
+    </style>

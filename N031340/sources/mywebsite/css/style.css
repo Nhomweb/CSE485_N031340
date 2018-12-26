@@ -7,7 +7,7 @@ body{
     font-size:12px;
     background-image: url("../images/back-ground.jpg");
     background-repeat: repeat-y;
-  
+    text-decoration: none;
 }
 .header-top{
     width: 100%;
@@ -43,13 +43,21 @@ body{
 }
 
 
+
+
+/* Dropdown Button */
+
+
+
 .content-left{
     width: 730px;
     float: left;
+    text-decoration: none;
 }
 .content-right{
     width: 250px;
     float: right;
+    text-decoration: none;
 }
 .sitemap{
     width: 990px;
@@ -249,7 +257,7 @@ cf::after, cf::before{
 /* ---------------------Start Menu--------------------- */
 .container ul{
     padding-left: 10px;
-    line-height: 40px;
+    line-height: 45px;
 }
 .container ul li{
     float:left;
@@ -270,8 +278,11 @@ cf::after, cf::before{
 }
 .container ul li a:hover{
     color:red;
-    text-decoration:underline;  
+    text-decoration:none;  
     
+}
+a{
+  text-decoration:none;    
 }
 
 /* ---------------------End Menu--------------------- */
@@ -565,7 +576,7 @@ a{
     width: fit-content;
     padding: 8px 20px;
     background-color: rgb(129, 220, 0);
-    margin-top: 20px;
+    margin-top: 8px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -741,12 +752,12 @@ a{
 .list-game{
     height: auto;
     overflow: auto;
-    padding: 10px;
+    padding: 5px;
 }
 
 .game-cung-theloai .box-game, .game-cung-theloai .box-game-last{
     width: 170px;
-    height: auto;
+    height: 165px;
     float: left;
     margin-bottom: 20px;
 }
@@ -987,42 +998,7 @@ a{
     opacity: 0.8;
 }
 
-            .dropbtn {
-              background-color: #57bdf4;
-              color: white;
-              padding: 7px;
-              font-size: 16px;
-              border: none;
-          }
-
-          .dropdown {
-              position: relative;
-              display: inline-block;
-          }
-
-          .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: #f1f1f1;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              z-index: 1;
-          }
-
-          .dropdown-content a {
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-          }
-
-          .dropdown-content a:hover {background-color: #ddd;}
-
-          .dropdown:hover .dropdown-content {display: block;}
-
-          .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-/************** End Game chÆ¡i nhiá»u nháº¥t **************/
+    
 /* ---------------------End Content Right--------------------- */
 
 /* Start Bá»• trá»£ */

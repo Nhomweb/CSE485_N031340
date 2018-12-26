@@ -11,7 +11,7 @@ require('header.php');
     include('hot.php')?>
 
                             <?php
-                             session_start(); 
+                            
 
 //include config
                             require_once('dangky/includes/config.php');

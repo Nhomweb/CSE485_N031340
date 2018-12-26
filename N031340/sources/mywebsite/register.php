@@ -83,7 +83,7 @@ require('header.php');
                                     try {
 
             //insert into database with a prepared statement
-                                        $stmt = $db->prepare('INSERT INTO user(username,password,email,fullname,sex,birthday,address,active) VALUES (:username, :password, :email,:fullname, :sex, :birthday, :address, :active)');
+                                        $stmt = $db->prepare("INSERT INTO user(username,password,email,fullname,sex,birthday,address,active) VALUES (:username, :password, :email,:fullname, :sex, :birthday, :address, :active)");
                                         $stmt->execute(array(
                                             ':username' => $username,
                                             ':password' => $hashedpassword,
@@ -100,7 +100,7 @@ require('header.php');
                                         $to = $_POST['email'];
                                         $subject = "Registration Confirmation";
                                         $body = "<p>Thank you for registering at demo site.</p>
-                                        <p>To activate your account, please click on this link: <a href='".DIR."form_active.php?x=$id&y=$activasion'>".DIR."form_active.php?x=$id&y=$activasion</a></p>
+                                        <p>To activate your account, please click on this link: <a href='".DIR."activate.php?x=$id&y=$activasion'>".DIR."activate.php?x=$id&y=$activasion</a></p>
                                         <p>Regards Site Admin</p>";
 
                                         $mail = new Mail();
@@ -167,16 +167,16 @@ require('header.php');
 
                                     <div class="row">
                                         <label for="name">Họ & tên</label>
-                                        <input name="name" id="name" type="text" required value="<?php if(isset($error)){ echo htmlspecialchars($_POST['fullname'], ENT_QUOTES); } ?>">
+                                        <input name="name" id="name" type="text" >
                                     </div>
                                     <div class="row">
                                         <label for="">Giới tính</label>
                                         <input name="sex" value="nam" type="radio">Nam&nbsp;&nbsp;
-                                        <input name="sex" value="nu" type="radio" required value="<?php if(isset($error)){ echo htmlspecialchars($_POST['sex'], ENT_QUOTES); } ?>">Nữ
+                                        <input name="sex" value="nu" type="radio">Nữ
                                     </div>
                                     <div class="row">
                                         <label for="birthday">Ngày sinh</label>
-                                        <input name="birthday" id="birthday" type="date" required value="<?php if(isset($error)){ echo htmlspecialchars($_POST['birthday'], ENT_QUOTES); } ?>">
+                                        <input name="birthday" id="birthday" type="date">
                                     </div>
                                     <div class="row">
                                         <label for="address">Địa chỉ</label>

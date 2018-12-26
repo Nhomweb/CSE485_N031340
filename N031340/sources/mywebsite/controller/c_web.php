@@ -1,16 +1,18 @@
 <?php
+
 include('model/m_web.php');
 include('model/pager.php');
-class C_web{
+class C_web extends database{
 	public function index(){
 		$m_web= new M_web();
 		$hot=$m_web->getHot();
+		$hot1=$m_web->getHot1();
 		$menu=$m_web->getMenu();
 		$nhieunhat=$m_web->getNhieunhat();
 		$yeuthich=$m_web->getYeuthich();
 		$inra=$m_web->getInra();
 		$theloaiList=$m_web->getTheloaiList();
-		return array('hot'=>$hot,'menu'=>$menu,'nhieunhat'=>$nhieunhat,'yeuthich'=>$yeuthich,'inra'=>$inra, 'theloaiList'=>$theloaiList);
+		return array('hot'=>$hot,'hot1'=>$hot1,'menu'=>$menu,'nhieunhat'=>$nhieunhat,'yeuthich'=>$yeuthich,'inra'=>$inra, 'theloaiList'=>$theloaiList);
 	}
 	public function loaitin(){
 
@@ -98,5 +100,11 @@ class C_web{
 		return array('binhluan'=>$binhluan);
 	}
 
+
+
+
+
+
 }
+
 ?>

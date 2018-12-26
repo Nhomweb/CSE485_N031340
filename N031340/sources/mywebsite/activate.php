@@ -19,7 +19,7 @@ if(is_numeric($id) && !empty($active)){
 	if($stmt->rowCount() == 1){
 
 		//redirect to login page
-		header('Location: login.php?action=active');
+		header('Location:http://localhost/N031340/mywebsite/login.php?action=active');
 		exit;
 
 	} else {

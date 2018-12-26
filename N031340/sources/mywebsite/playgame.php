@@ -93,7 +93,8 @@ if (isset($_SESSION['chua_dang_nhap'])) {
             <header class="title-game-cung-theloai">
                   <section class="tentheloai"><a href="#">Game liên quan</a></section>
             </header>
-            <section class="list-game">
+            <section class="list-game" id="box">
+
                 <?php
 foreach ($relatednews as $related) {
                 ?>
@@ -107,7 +108,20 @@ foreach ($relatednews as $related) {
                 <?php
 }
 ?>
-                <button type="button" class="box-game-xemthem">Xem thêm</button>
+
+  <script type="text/javascript">
+                    var toancuc=0;
+                    $(document).ready(function(){
+                        $("#xemthem").click(function(){
+                            toancuc=toancuc+1;
+                            $.get('phantrang.php',{trang:toancuc}, function(data){
+                              $("#box").append(data);
+                            });
+                        });
+                    });
+                </script>
+
+                <button type="button" class="box-game-xemthem" id="xemthem">Xem thêm</button>
             </section>
         </section>
     </div>

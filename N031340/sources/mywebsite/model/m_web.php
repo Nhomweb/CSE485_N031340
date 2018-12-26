@@ -13,11 +13,18 @@ class M_web extends database{
 		return $this->loadAllRows();
 	}
 
+	function getHot1()
+	{
+		$sql="SELECT * FROM game where hot =1 LIMIT 5";
+		$this->setQuery($sql);
+		return $this->loadAllRows();
+	}
+
 
 	//2
 	function getMenu()
 	{
-		$sql="SELECT * FROM theloaigame tlg INNER JOIN game g ON g.id_theloai=tlg.id_theloai GROUP BY tlg.id_theloai limit 10";
+		$sql="SELECT * FROM theloaigame tlg INNER JOIN game g ON g.id_theloai=tlg.id_theloai GROUP BY tlg.id_theloai limit 8";
 		$this->setQuery($sql);
 		return $this->loadAllRows();
 	}
@@ -31,7 +38,7 @@ class M_web extends database{
 	}*/
 
 
-	function getTheloai($id_loai,$vitri=-1,$limit=-1)
+function getTheloai($id_loai,$vitri=-1,$limit=-1)
 	{
 		$sql="SELECT * FROM game WHERE id_theloai=$id_loai ";
 		if ($vitri>-1 && $limit>1) {
