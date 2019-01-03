@@ -28,7 +28,7 @@ else
 			</div>
 			<div class="col-md-4">
 				<div class="col-md-8 lgdef">
-					<h5>ADMIN <sub>i</sub></h5>
+					<h5>ADMIN </h5>
 					<form action="login.php" method="POST">
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
@@ -42,6 +42,7 @@ else
 						<div class="input-group">
 							<input type='submit' name='submit' class="btn btn-info "  value="LOGIN">
 						</div><br>
+						<a href="http://localhost/N031340/mywebsite/">Trở về trang chủ</a>
 					</form>
 					
 				</div>

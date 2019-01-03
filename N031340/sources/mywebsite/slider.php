@@ -1,7 +1,12 @@
- <div class="content-right">
+<div class="content-right">
     <div class="quangcao">
-        <a href="http://indogamersonline.blogspot.com/2011/05/game-untuk-nokia-2700-classic-cricket.html" target="_blank"><img src="images/quangcao/quangcao_1.gif" alt=""></a>
-        <a href="http://www.xemtructiepbongda.net/2015/06/youtube-bong-da.html" target="_blank"><img src="images/quangcao/quangcao_10.gif" alt=""></a>
+<?php
+        foreach ($quangcao as $qc) {
+                ?>
+        <a href="<?=$qc->url?>" target="_blank"><img src="images/quangcao/<?=$qc->taptin?>" alt=""></a><br>
+                       <?php
+}
+?>
 
     </div>
     <div class="game-choinhieunhat">
@@ -35,6 +40,9 @@
 
         }
         ?>
+
+
+
     </section>
 </div>
 
@@ -43,7 +51,7 @@
 
 
 
-<div class="game-choinhieunhat" id="yeuthichnhat">
+<div class="game-choinhieunhat"  >
     <header class="title-game-choinhieunhat">Game yêu thích nhiều nhất</header>
     <section class="content-game-choinhieunhat">
       <?php
@@ -73,6 +81,20 @@
 
     }
     ?>
+
 </section>
 </div>
+
+<div class="quangcao"  id="yeuthichnhat">
+    <div id="fb-root"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.2&appId=163646674273823&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-page" data-href="https://www.facebook.com/game2d/?modal=admin_todo_tour" data-tabs="timeline" data-height="200" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/game2d/?modal=admin_todo_tour" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/game2d/?modal=admin_todo_tour">Game Mini- Game 2D</a></blockquote></div>
+    </div>
 </div>

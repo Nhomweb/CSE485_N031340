@@ -10,14 +10,14 @@ require('header.php');
                             if( $user->is_logged_in() ){ header('Location:index.php'); exit(); }
 
 //if form has been submitted process it
-                            if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
 
-	//Make sure all POSTS are declared
-                               if (!isset($_POST['email'])) $error[] = "Please fill out all fields";
+  //Make sure all POSTS are declared
+  if (!isset($_POST['email'])) $error[] = "Please fill out all fields";
 
 
-	//email validation
-                          if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+  //email validation
+  if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
       $error[] = 'Please enter a valid email address';
   } else {
     $stmt = $db->prepare('SELECT email FROM user WHERE email = :email');
@@ -29,6 +29,7 @@ require('header.php');
     }
 
   }
+
 
 	//if no errors have been created carry on
                              if(!isset($error)){
@@ -53,7 +54,7 @@ require('header.php');
          $subject = "Password Reset";
          $body = "<p>Someone requested that the password be reset.</p>
          <p>If this was a mistake, just ignore this email and nothing will happen.</p>
-         <p>To reset your password, visit the following address: <a href='".DIR."dangky/resetPassword.php?key=$token'>".DIR."dangky/resetPassword.php?key=$token</a></p>";
+         <p>To reset your password, visit the following address: <a href='".DIR."resetPassword.php?key=$token'>".DIR."resetPassword.php?key=$token</a></p>";
 
          $mail = new Mail();
          $mail->setFrom(SITEEMAIL);
@@ -110,8 +111,9 @@ if(isset($_GET['action'])){
 
         <div class="row">
             <label for="email">Nhập email<span class="red asterisk bold"> *</span></label>
-            <input name="username" id="username" type="text" required autofocus
+            <input type="email" name="email" id="email" type="text" 
             placeholder="Email cần lấy lại mật khẩu" value="" tabindex="1">
+
         </div>
 
         <div class="row-submit">

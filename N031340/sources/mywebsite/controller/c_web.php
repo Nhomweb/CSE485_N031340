@@ -8,11 +8,12 @@ class C_web extends database{
 		$hot=$m_web->getHot();
 		$hot1=$m_web->getHot1();
 		$menu=$m_web->getMenu();
+		$quangcao=$m_web->quangcao();
 		$nhieunhat=$m_web->getNhieunhat();
 		$yeuthich=$m_web->getYeuthich();
 		$inra=$m_web->getInra();
 		$theloaiList=$m_web->getTheloaiList();
-		return array('hot'=>$hot,'hot1'=>$hot1,'menu'=>$menu,'nhieunhat'=>$nhieunhat,'yeuthich'=>$yeuthich,'inra'=>$inra, 'theloaiList'=>$theloaiList);
+		return array('hot'=>$hot,'hot1'=>$hot1,'menu'=>$menu,'nhieunhat'=>$nhieunhat,'yeuthich'=>$yeuthich,'inra'=>$inra, 'theloaiList'=>$theloaiList, 'quangcao'=>$quangcao);
 	}
 	public function loaitin(){
 
@@ -20,25 +21,15 @@ class C_web extends database{
 			$id_loai = $_GET['id_loai'];	
 			$m_web= new M_web();
 			$danhmuctin=$m_web->getTheloai($id_loai);
-			$trang_hientai=isset($_GET['page']) ? $_GET['page'] : 1;
-			$limit=16;
-			$total_records=count($danhmuctin);
-			$total_page = ceil($total_records / $limit);
-			if ($trang_hientai > $total_page){
-				$trang_hientai = $total_page;
-			}
-			else if ($trang_hientai < 1){
-				$trang_hientai = 1;
-			}
+			$trang_hientai=isset($_GET['page']) ? $_GET['page']:1;
+			$pagination= new pagination(count($danhmuctin),$trang_hientai);
+			$paginationHTML=$pagination->showPagination();
+			$limit=$pagination->_nItemOnPage;
 			$vitri=($trang_hientai-1)*$limit;
-			$conn = mysqli_connect('localhost', 'root', '', 'mywebsite');
-
-			$result = mysqli_query($conn, "SELECT * FROM game LIMIT $vitri, $limit");
-
 			$danhmuctin=$m_web->getTheloai($id_loai,$vitri,$limit);
 			$menu=$m_web->getMenu();
 			$list=$m_web->getList($id_loai);
-			return array('danhmuctin'=>$danhmuctin,'menu'=>$menu,'list'=>$list);
+			return array('danhmuctin'=>$danhmuctin,'menu'=>$menu,'list'=>$list,'thanh_phantrang'=>$paginationHTML);
 		}
 	}
 
@@ -63,47 +54,14 @@ class C_web extends database{
 	}
 
 	public function timkiem(){
-		$m_web= new M_web();
-    if (isset($_POST['key'])) {
-    $key = $_POST['key'];
+	$m_web= new M_web();
+	if (isset($_GET['tukhoa'])){
+   $key=$_GET['tukhoa'];
     $game=$m_web->search($key);
 	return array('game'=>$game);
 	}
-	}
-
-    public function dangnhap(){
-    	$m_web= new M_web();
-    	$user=$m_web->dangnhap($username,$password);
-    	if ($user == true) {
-    		$_SESSION['username']=$user->name;
-    		$_SESSION['id']=$user->id;
-    		header('location:index.php');
-            if (isset($_SESSION['user_error'])) {
-            	unset($_SESSION['user_error']);
-            }
-            if (isset($_SESSION['chua_dang_nhap'])) {
-            	unset($_SESSION['chua_dang_nhap']);
-
-    	}
-    	else{
-    		$_SESSION['user_error']='Sai thong tin dang nhap';
-    		header('location:login.php');
-    	}
-    }
-    return array('user'=>$user);
-
 }
-    public function themBinhluan($id,$id_game,$noidung){
-		$m_web=new M_web();
-		$binhluan=$m_web->addComment($id,$id_game,$noidung);
-		header('location'.$_SERVER['HTTP_REFERER']);
-		return array('binhluan'=>$binhluan);
-	}
-
-
-
-
-
+	
 
 }
 

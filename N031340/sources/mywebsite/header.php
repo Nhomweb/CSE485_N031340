@@ -7,6 +7,7 @@ $noi_dung=$c_web->index();
 $hot=$noi_dung['hot'];
 $hot1=$noi_dung['hot1'];
 $menu=$noi_dung['menu'];
+$quangcao=$noi_dung['quangcao'];
 $nhieunhat=$noi_dung['nhieunhat'];
 $yeuthich=$noi_dung['yeuthich'];
 $inra=$noi_dung['inra'];
@@ -14,36 +15,21 @@ $theloaiList=$noi_dung['theloaiList'];
 $theloai=$c_web->loaitin();
 $danhmuctin=$theloai['danhmuctin'];
 $list=$theloai['list'];
+$thanh_phantrang=$theloai['thanh_phantrang'];
 $games=$c_web->chitiet();
 $chitiet=$games['chitiet'];
 $relatednews=$games['relatednews'];
 
 $game=$c_web->timkiem();
 $game=$game['game'];
-$user = $c_web->dangnhap();
-if (isset($_POST['dangnhap'])) {
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-    $user=$c_web->dangnhap($username,$password);
-}
 
 
-if (isset($_POST['binhluan'])) {
-    if (isset($_SESSION['id'])) {
-        $id=$_SESSION['id'];
-        $id_games=$_SESSION['id_games'];
-        $noidung=$_SESSION['noidung'];
-        $comment=$c_web->themBinhluan();
-    }else{
-        $_SESSION['chua_dang_nhap']="vui long dang nhap de binh luan";
-    }
-    
-}
+
 
 
 
 //$thanh_phantrang=$theloai['thanh_phantrang'];
-//print_r($game);
+//print_r($quangcao);
 ?>
 <?php 
 ob_start();
@@ -57,7 +43,7 @@ session_start(); ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="wowslider/wowslider.css">
     <link rel="stylesheet prefetch" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
     <script type="text/javascript" src="wowslider/script.js"></script>
@@ -67,7 +53,23 @@ session_start(); ?>
     <title><?php if(isset($title)){ echo $title; }?></title>
 
 
+
+
 </head>
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131551517-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131551517-1');
+</script>
+
 
 <body>
  <header class="header-top">
@@ -75,11 +77,17 @@ session_start(); ?>
         <section class="logo">
             <a href="index.php"><img src="images/logo.jpg" alt="Logo"></a>
         </section>
-        <form action="timkiem.php" class="searchform cf" method="post">
 
-            <input class="form-control" type="text" name="search" placeholder="Bạn muốn chơi game gì?">
-            <button onclick="search();" class="btn btn-default" ><span class="glyphicon glyphicon-search"">Search</button></span>
-        </form>
+      
+        <form action="timkiem.php" class="searchform" >
+                <input id="txtSearch" type="text" name = "tukhoa" placeholder="Bạn muốn chơi game gì?">
+                <button type="submit"  id="btnSearch">Search</button>
+           </form>
+
+   
+
+
+
           <?php
            if(isset($_SESSION['username'])){
             ?>
@@ -95,8 +103,8 @@ session_start(); ?>
             <?php
            }
         ?>
-        
     </section>
+    <a href="admin">ADMIN</a>
 </header>
 <!-- End Header -->
 
@@ -117,18 +125,36 @@ foreach ($menu as $mn) {
     <?php
 }
         ?>
+
+
+       <?php
+           if(isset($_SESSION['username'])){
+            ?>  
         <li><div class="dropdown">
                         <button class="dropbtn">Thể loại khác</button>
-                        <div class="dropdown-content">
-                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=9">Trí tuệ</a>
-                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=10">Kinh dị</a>
-                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=11">Âm nhạc</a>
-                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=12">Văn phòng</a>
-                          <a href="http://localhost/N031340/mywebsite/theloaigame.php?id_loai=13">Trẻ em</a>
+
+                          <div class="dropdown-content">
+                          <a href="theloaigame.php?id_loai=9">Trí tuệ</a>
+                          <a href="theloaigame.php?id_loai=10">Kinh dị</a>
+                          <a href="theloaigame.php?id_loai=11">Âm nhạc</a>
+                          <a href="theloaigame.php?id_loai=12">Văn phòng</a>
+                          <a href="theloaigame.php?id_loai=13">Trẻ em</a>
                           
                         </div>
                     </div>
+        
                 </li>
+
+                          <?php
+           }
+           else{
+            ?>
+<li><div class="dropdown" id="dropdown1">
+            <button class="dropbtn">Thể loại khác</button>
+</div></li>
+              <?php
+           }
+        ?>
         </ul>
 
                </section>

@@ -52,7 +52,7 @@ function getTheloai($id_loai,$vitri=-1,$limit=-1)
 	//3
 	function getTheloaiList()
 	{
-		$sql="SELECT * FROM theloaigame where 1=1 limit 10";
+		$sql="SELECT * FROM theloaigame where 1=1 limit 8";
 		$this->setQuery($sql);
 		return $this->loadAllRows();
 	}
@@ -108,26 +108,23 @@ function getTheloai($id_loai,$vitri=-1,$limit=-1)
 	}
 
 	function getRalatedNews($theloai){
-		$sql="SELECT * from game  where id_theloai=$theloai ORDER BY luotyeuthich DESC limit 12";
+		$sql="SELECT * from game  where id_theloai=$theloai ORDER BY luotyeuthich DESC limit 20";
 		$this->setQuery($sql);
 		return $this->loadAllRows(array($theloai));
 
 	}
 
 	function search($key){
-		$sql="SELECT * FROM game WHERE tengame like '%$key%'";
+		$sql="SELECT g.*,tlg.tentheloai FROM game g INNER JOIN theloaigame tlg ON g.id_theloai=tlg.id_theloai WHERE g.tengame like '%$key%' or tlg.tentheloai like '%$key%'";
 		$this->setQuery($sql);
 		return $this->loadAllRows(array($key));
 	}
-function dangnhap($username,$password){
-	$sql= "SELECT * from user WHERE username='$username' and password='$password'";
-	$this->setQuery($sql);
-	return $this->loadAllRows(array($username,$password));
-}
-function addComment($id,$id_game,$noidung){
-	$sql=" INSERT INTO comment(id,id_game,noidung) VALUES (?,?,?)";
-	$this->setQuery($sql);
-	return $this->execute(array($id,$id_game,$noidung));
-}
+
+	function quangcao(){
+		$sql="SELECT * FROM quangcao ORDER BY RAND() LIMIT 2;";
+		$this->setQuery($sql);
+		return $this->loadAllRows();
+	}
+
 }
 ?>

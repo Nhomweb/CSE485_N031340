@@ -8,7 +8,7 @@ require('login/session.php');
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-   	<title>i ADMIN</title>
+   	<title>ADMIN</title>
 	<meta name="robots" content="noindex, nofollow">
    	<meta name="author" content="lakshmaji"/>
    	<link rel="publisher" href="http://lakshmaji.tk">
@@ -50,13 +50,13 @@ a:hover{text-decoration:none;}
 	      	<a class="navbar-brand" href="#">
           		<span class="glyphicon glyphicon-leaf" style="font-size:2.5em"></span>
       		</a>
-		<a class="navbar-brand" href="#">
-          		<span><i style="font-size:8px;letter-spacing:5px">@My App</i><br> i ADMINSTRATOR</span>
+		<a class="navbar-brand" href="http://localhost/N031340/mywebsite/">
+          		<span><i style="font-size:8px;letter-spacing:5px">@Game 2D</i><br>VIEW WEBSITE</span>
       		</a>
  	</div>
     	<div class="collapse navbar-collapse" id="myNavbar">
 	      	<ul class="nav navbar-nav navbar-right">
-        		<li ><p style="margin-top:10%;">ADMINSTARTOR<br><i style="font-size:8px;letter-spacing:5px">nhat</i></p></li>
+        		<li ><p style="margin-top:10%;">ADMINSTARTOR<br><i style="font-size:8px;letter-spacing:5px">Hiii <?=$_SESSION['login_user']?></i></p></li>
         		<li><a href="login/logout.php"><span class="glyphicon glyphicon-off" style="font-size:2.5em"></span></a></li>
       		</ul>
     	</div>

@@ -25,7 +25,7 @@
 			$username = stripslashes($username);
 			$password = stripslashes($password);
 			$username = mysqli_real_escape_string($connection_ref,$username);
-			$password = md5(mysqli_real_escape_string($conn.0ection_ref,$password));
+			$password = md5(mysqli_real_escape_string($connection_ref,$password));
 			// Selecting Database
 			
 //$db = mysql_select_db("db_s_vv", $connection);

@@ -1,14 +1,14 @@
 <?php
-$title='Game mini - Game 2D';
+$title='Game mini-Game 2D';
 require('header.php');
 ?>
 
 <!-- Start Wrapper  -->
 <div class="wrapper" >
-    <div class="content-left">
+    <div class="content-left" >
       <?php require('hot.php');?>
 
-      <section class="theloai-game">
+      <section class="theloai-game" id="dataseach">
        <?php    for ($ii=0; $ii <count($theloaiList) ; $ii++) {
         ?>
         <header><a href="theloaigame.php?id_loai=<?=$theloaiList[$ii]->id_theloai?>"><?=$theloaiList[$ii]->tentheloai?></a></header><hr>
@@ -56,7 +56,7 @@ require('header.php');
 
 </div>
 <?php
-require('slider.php');
+include("slider.php");
 ?>
 </div>
 

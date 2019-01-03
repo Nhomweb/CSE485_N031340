@@ -38,12 +38,17 @@ body{
 }
 .sticky {
   position: fixed;
-  top: 0;
+ 
   width: 100%;
 }
 
 
+#thongbao {
 
+    font-size: 30px;
+    margin-top: 10px;
+
+}
 
 /* Dropdown Button */
 
@@ -100,8 +105,26 @@ body{
 /* End Layout */
 
 
+.icon-fullscreen {
 
+    margin-left: 30px;
+   
+    margin-top: 15px;
 
+}
+
+#fullscreen {
+
+    
+    margin-top: 26px;
+}
+
+.form-control {
+
+    width: 100%;
+    height: auto;
+
+}
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
@@ -138,9 +161,9 @@ cf::after, cf::before{
     height: 38px;
     float: left;
     border: 1px solid rgb(163, 163, 163);
-    margin-left: 20px;
+    margin-left: 100px;
     margin-top: 12px;
-    border-radius: 10px;
+    border-radius: 15px;
     background: rgb(237, 237, 237);
     padding: 4px 8px;
     box-shadow: 
@@ -151,8 +174,8 @@ cf::after, cf::before{
 
 .searchform input{
     border-radius: 10px;
-    width: 50%;
     padding: 8px 10px;
+    width: 60%;
 }
 .searchform input:focus{
     outline: none;
@@ -163,7 +186,8 @@ cf::after, cf::before{
 }
 
 .searchform button{
-    margin-left: 18px;
+    
+    width: 30%;
     background: #57bdf4;
     padding: 8px 26px;
     border-radius: 5px 30px 2px 18px;    
@@ -603,6 +627,7 @@ a{
 /* Start pháº§n Like - Share */
 .like{
     display: inline-block;
+    margin-bottom: 10px;
   }
   
   
@@ -641,7 +666,7 @@ a{
 
   .like1{
     display: inline-block;
-    margin-left: 200px;
+    margin-left: 175px;
   }
    .like1 p{
       float:left;   
@@ -669,7 +694,7 @@ a{
 
 /* Start chÃº thÃ­ch vÃ  hÆ°á»›ng dáº«n chÆ¡i */
 .content-box-playgame{
-    margin-top: 30px;
+    margin-top: 5px;
 }
 
 .content-box-playgame-flash{
@@ -753,6 +778,7 @@ a{
     height: auto;
     overflow: auto;
     padding: 5px;
+    margin-top: 8px;
 }
 
 .game-cung-theloai .box-game, .game-cung-theloai .box-game-last{
@@ -933,7 +959,7 @@ a{
     border-top: 4px solid #5168fb;
     border-radius: 5px;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     box-shadow: 
     1px 1px 2px black,
     2px 2px 4px gray,

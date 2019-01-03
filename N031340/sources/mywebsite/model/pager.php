@@ -1,13 +1,13 @@
 <?php 
 
-class pagerAjax{
-    public $_nItemOnPage; // số lượng item trong 1 page
+class pagination{
+  public $_nItemOnPage; // số lượng item trong 1 page
   private $_totalItem;// tổng số item
   private $_nPageShow ; // số lượng link page hiển thị
   private $_totalPage; // tổng số page
   private $_currentPage; // page hiện tại
 
-  public function __construct($totalItem,$currentPage = 1,$nItemOnPage = 5,$nPageShow = 5){
+  public function __construct($totalItem,$currentPage = 1,$nItemOnPage = 16,$nPageShow = 3){
     $this->_totalItem   = $totalItem;
     $this->_nItemOnPage = $nItemOnPage;
     if ($nPageShow%2==0) {
@@ -40,14 +40,14 @@ class pagerAjax{
       $start  = '';
       $prev   = '';
       if($this->_currentPage > 1){
-        $start  = "<li><a href='$actual_link?page=1' data-Page='1'>Start</a></li>";
-        $prev   = "<li><a href='$actual_link?page=".($this->_currentPage-1)."' data-Page=".($this->_currentPage-1).">«</a></li>";
+        $start  = "<li><a href='$actual_link&page=1' data-Page='1'>Start</a></li>";
+        $prev   = "<li><a href='$actual_link&page=".($this->_currentPage-1)."' data-Page=".($this->_currentPage-1).">«</a></li>";
       }
       $next   = '';
       $end  = '';
       if($this->_currentPage < $this->_totalPage){
-        $next   = "<li><a href='$actual_link?page=".($this->_currentPage+1)."' data-Page=".($this->_currentPage-1).">»</a></li>";
-        $end  = "<li><a href='$actual_link?page=".$this->_totalPage."'"."data-Page=$this->_totalPage".">End</a></li>";
+        $next   = "<li><a href='$actual_link&page=".($this->_currentPage+1)."' data-Page=".($this->_currentPage-1).">»</a></li>";
+        $end  = "<li><a href='$actual_link&page=".$this->_totalPage."'"."data-Page=$this->_totalPage".">End</a></li>";
       }
 
       if($this->_nPageShow < $this->_totalPage){
@@ -81,7 +81,7 @@ class pagerAjax{
         if($i == $this->_currentPage) {
           $listPages .= "<li class='active'><a href='#' data-Page=".$i.">".$i.'</a>';
         }else{
-          $listPages .= "<li><a href='$actual_link?page=".$i."' data-Page=".$i.">".$i.'</a>';
+          $listPages .= "<li><a href='$actual_link&page=".$i."' data-Page=".$i.">".$i.'</a>';
         }
       }
       $paginationHTML = '<ul class="pagination">'.$start.$prev.$listPages.$next.$end.'</ul>';
